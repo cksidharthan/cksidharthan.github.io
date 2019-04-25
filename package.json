@@ -1,0 +1,18 @@
+{
+  "name": "sidharthan-portfolio",
+  "version": "1.0.0",
+  "description": "Sidharthan Sample portfolio project",
+  "main": "index.js",
+  "scripts": {
+    "compile": "node-sass sass/main.scss css/style.css -w"
+  },
+  "keywords": [
+    "sidharthan",
+    "portfolio"
+  ],
+  "author": "Sidharthan Chandrasekaran Kamaraj",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.11.0"
+  }
+}
