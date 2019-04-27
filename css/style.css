@@ -79,7 +79,7 @@ body {
       animation: moveFromLeft 1s ease-out; }
     .header-heading-primary-sub {
       display: block;
-      font-size: 30px;
+      font-size: 20px;
       font-weight: 400;
       animation: moveFromRight 1s ease-out; }
   .header-arrow {
