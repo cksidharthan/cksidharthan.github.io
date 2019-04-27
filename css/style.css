@@ -1,6 +1,6 @@
 /* 
 $color-primary: #3a9af5;
-$color-primary-light: #69d0f0;
+$color-primary-light: #000;
 $color-primary-dark: #0d79f5;
 */
 
@@ -24,28 +24,24 @@ body {
 
 .header {
   height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(13, 121, 245, 0.87), rgba(105, 208, 240, 0.87)), url(../assets/header_background.jpg);
+  background-image: linear-gradient(to right bottom, rgba(1, 11, 24, 0.918), rgba(2, 38, 49, 0.925)), url(../assets/header_background.jpg);
   background-size: cover;
   background-position: top;
   position: relative;
+  clip-path: polygon(100% 0, 100% 90%, 50% 100%, 0 90%, 0 0);
 }
 
-.logo-box {
-  position: absolute;
-  top: 10vh;
-  left: 10vh;
-}
 
 .logo {
   height: 30vh;
   border-radius: 100%;
+  animation: moveFromTop 1s ease-out
 }
 
 .header-heading-primary {
   color: #ffffff;
   text-transform: uppercase;
   transform: translate(-50%, -50%);
-  
   text-align: center;
 }
 
@@ -53,16 +49,80 @@ body {
   display: block;
   font-size: 50px;
   font-weight: 400;
+  animation: moveFromLeft 1s ease-out;
 }
 
 .header-heading-primary-sub {
   display: block;
   font-size: 30px;
   font-weight: 400;
+  animation: moveFromRight 1s ease-out;
 }
 
 .text-box {
   position: absolute;
-  top: 50%;
+  top: 47%;
   left: 50%;
+}
+
+.header-arrow {
+  padding: 30px 0 0 0;
+  height: 70px;
+  animation: moveFromBottom 1s ease-out;
+}
+
+@keyframes moveFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-150px);
+  }
+  80% {
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes moveFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-150px);
+  }
+  80% {
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(150px);
+  }
+  80% {
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(150px);
+  }
+  80% {
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
