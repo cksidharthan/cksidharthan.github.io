@@ -7,3 +7,25 @@
         color: black;
     }
 }
+
+.section-online-list {
+    padding: 1vh 0 0 20vh;
+    color: white;
+    font-size: 1vw;
+    display: block;
+}
+
+.section-background-list {
+    padding: 1vh 0 0 20vh;
+    color: white;
+    font-size: 1vw;
+    display: block;
+    &:before {
+        content:"• ";
+    }
+}
+
+.designation {
+    font-size: 1.2vw;
+    font-weight: bold
+}
