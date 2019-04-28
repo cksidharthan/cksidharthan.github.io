@@ -86,7 +86,8 @@ body {
 
 .hire-me-text {
   font-size: 1.5vw;
-  padding: 10vh; }
+  padding: 15vh;
+  margin-top: -5vh; }
   .hire-me-text a {
     color: black; }
 
