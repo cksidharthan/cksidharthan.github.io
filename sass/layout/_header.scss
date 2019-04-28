@@ -15,14 +15,14 @@
 
     &-main {
       display: block;
-      font-size: 50px;
+      font-size: 3vw;
       font-weight: 400;
       animation: moveFromLeft 1s ease-out;
     }
 
     &-sub {
       display: block;
-      font-size: 20px;
+      font-size: 1.5vw;
       font-weight: 400;
       animation: moveFromRight 1s ease-out;
     }
@@ -44,7 +44,7 @@
 }
 
 .heading-secondary {
-    font-size: 3.5rem;
+    font-size: 3vw;
     font-weight: 700;
     text-transform: uppercase;
     background-image: linear-gradient(to right, $color-primary-dark, $color-primary-light);
