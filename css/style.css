@@ -90,6 +90,10 @@ body {
   .hire-me-text a {
     color: black; }
 
+.footer-menu {
+  font-weight: 600;
+  font-size: 2vw; }
+
 .u-center-text {
   text-align: center; }
 
@@ -194,12 +198,23 @@ body {
 
 .section-hireme {
   background-color: #d3d6d6b0;
-  padding: 10rem 0 6rem 0;
+  padding: 10rem 0 10rem 0;
   margin-top: -25vh; }
 
 .section-footer {
   background-image: linear-gradient(to right bottom, rgba(24, 23, 23, 0.918), rgba(15, 15, 15, 0.925));
   height: 50vh;
-  margin-top: -15vh;
+  margin-top: -30vh;
   position: relative;
-  clip-path: polygon(0 15vh, 100% 0, 100% 75vh, 0 90vh); }
+  clip-path: polygon(0 15vh, 100% 0, 100% 75vh, 0 90vh);
+  text-align: center; }
+
+.footer {
+  padding: 20vh 10vh 0 10vh;
+  color: white; }
+
+.footer-links {
+  font-size: 1vw;
+  display: block;
+  text-decoration: none;
+  color: antiquewhite; }
