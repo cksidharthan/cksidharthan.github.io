@@ -1,4 +1,4 @@
-particlesJS("my-particle-js", {
+particlesJS.load("particle-js", {
     "particles": {
       "number": {
         "value": 60,
@@ -19,12 +19,6 @@ particlesJS("my-particle-js", {
         "polygon": {
           "nb_sides": 5
         },
-        "image": {
-          "src": "img/github.svg",
-          "width": 100,
-          "height": 100
-        }
-      },
       "opacity": {
         "value": 0.8,
         "random": false,
@@ -106,5 +100,5 @@ particlesJS("my-particle-js", {
         }
       }
     },
-    "retina_detect": true
-  });
+    "retina_detect": true }
+});

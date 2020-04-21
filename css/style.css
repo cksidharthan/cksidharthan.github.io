@@ -28,7 +28,6 @@ body {
           align-items: center;
   align-content: center;
   flex-wrap: wrap;
-  width: 75vw;
 }
 
 #page {
@@ -1372,8 +1371,9 @@ input[type="text"] {
   width: 120%;
 }
 
-#my-particle-js {
+.overlay, #particle-js {
   width: 100vw;
   height: 100vh;
-  background: #000000;
+  background: rgba(129, 98, 58, 0.9);
+  z-index: -1;
 }
