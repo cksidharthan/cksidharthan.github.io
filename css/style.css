@@ -19,6 +19,18 @@ body {
   background: #fff;
 }
 
+.my-container {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  width: 75vw;
+}
+
 #page {
   position: relative;
   overflow-x: hidden;
@@ -1317,4 +1329,51 @@ input[type="text"] {
 .contact-btn-brown {
     color: white;
     background-color: rgba(129, 98, 58, 0.9) !important;
+}
+
+.my-button {
+  -webkit-box-flex: 1;
+  flex: 1 1 auto;
+  margin: 10px;
+  padding: 10px;
+  border: 2px solid rgba(129, 98, 58, 0.9);
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+  overflow:hidden;
+  transition: .3s;
+}
+
+.my-button:after {
+  position: absolute;
+  -webkit-transition: .3s;
+  transition: .3s;
+  content: '';
+  width: 0;
+  left: 50%;
+  bottom: 0;
+  height: 3px;
+  background:  rgba(129, 98, 58, 0.9);
+}
+
+.my-button:hover:nth-of-type(5) {
+  color: rgba(129, 98, 58, 0.9);
+}
+
+.my-button:hover {
+  cursor: pointer;
+}
+.my-button:hover:after {
+  width: 100%;
+  left: 0;
+}
+.my-button:hover:nth-of-type(5):after {
+  left: -10%;
+  width: 120%;
+}
+
+#my-particle-js {
+  width: 100vw;
+  height: 100vh;
+  background: #000000;
 }
