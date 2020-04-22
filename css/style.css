@@ -600,7 +600,7 @@ h1, h2, h3, h4, h5, h6, figure {
   margin-bottom: 20px;
   font-size: 16px;
   font-weight: normal;
-  color: #bfbfbf;
+  color: #2c2a2a;
 }
 
 .timeline-body > p,
@@ -1333,12 +1333,27 @@ input[type="text"] {
 }
 
 .contact-btn {
-    color: rgba(129, 98, 58, 0.9) !important;
+    background-color: white;
+    border: 3px solid rgba(129, 98, 58, 0.9);
+    color: rgba(129, 98, 58, 0.9);
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
 }
 
-.contact-btn-brown {
-    color: white;
-    background-color: rgba(129, 98, 58, 0.9) !important;
+.contact-btn:hover {
+  background-color: rgba(129, 98, 58, 0.9);
+  border: 3px solid white;
+  color: white;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 22px;
+  font-weight: bold;
 }
 
 .my-button {
@@ -1371,7 +1386,7 @@ input[type="text"] {
 }
 
 .my-button:hover {
-  cursor: pointer;
+  cursor: default;
 }
 .my-button:hover:after {
   width: 100%;
