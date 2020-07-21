@@ -1396,3 +1396,9 @@ input[type="text"] {
   left: -10%;
   width: 120%;
 }
+
+@media only screen and (max-width: 500px) {
+  .mobile-padding {
+     padding-top: 40%;
+  }
+}
