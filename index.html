@@ -1,259 +1,291 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sidharthan C Kamaraj - Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        .blob-1 {
-            position: absolute;
-            top: -100px;
-            right: -100px;
-            z-index: -1;
-            animation: float 6s ease-in-out infinite;
-        }
-        .blob-2 {
-            position: absolute;
-            bottom: -150px;
-            left: -150px;
-            z-index: -1;
-            animation: float 8s ease-in-out infinite;
-        }
-        @keyframes float {
-            0% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(5deg); }
-            100% { transform: translateY(0px) rotate(0deg); }
-        }
-        .grid-bg {
-            background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
-            background-size: 30px 30px;
-        }
-        .timeline-line {
-            background: none;
-            height: 40px;
-            position: relative;
-            overflow: visible;
-        }
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sidharthan C Kamaraj - Portfolio</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<style>
+		.blob-1 {
+			position: absolute;
+			top: -100px;
+			right: -100px;
+			z-index: -1;
+			animation: float 6s ease-in-out infinite;
+		}
 
-        .timeline-track {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, 
-                rgba(99, 102, 241, 0.1) 0%,
-                rgba(99, 102, 241, 0.3) 50%,
-                rgba(99, 102, 241, 0.1) 100%
-            );
-            transform: translateY(-50%);
-        }
+		.blob-2 {
+			position: absolute;
+			bottom: -150px;
+			left: -150px;
+			z-index: -1;
+			animation: float 8s ease-in-out infinite;
+		}
 
-        .timeline-glow {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            width: 100%;
-            height: 10px;
-            background: linear-gradient(90deg, 
-                transparent 0%,
-                #6366f1 50%,
-                transparent 100%
-            );
-            filter: blur(8px);
-            transform: translateY(-50%);
-            opacity: 0.3;
-            animation: glowPulse 3s infinite;
-        }
+		@keyframes float {
+			0% {
+				transform: translateY(0px) rotate(0deg);
+			}
 
-        .timeline-particles {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            width: 100%;
-            height: 20px;
-            transform: translateY(-50%);
-        }
+			50% {
+				transform: translateY(-20px) rotate(5deg);
+			}
 
-        .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: #6366f1;
-            border-radius: 50%;
-            animation: particleFloat 8s infinite linear;
-        }
+			100% {
+				transform: translateY(0px) rotate(0deg);
+			}
+		}
 
-        .particle::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 20px;
-            height: 1px;
-            background: linear-gradient(90deg, #6366f1, transparent);
-            transform: translate(-50%, -50%);
-        }
+		.grid-bg {
+			background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+			background-size: 30px 30px;
+		}
 
-        @keyframes glowPulse {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 0.5; }
-        }
+		.timeline-line {
+			background: none;
+			height: 40px;
+			position: relative;
+			overflow: visible;
+		}
 
-        @keyframes particleFloat {
-            0% {
-                left: -5px;
-                opacity: 0;
-            }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% {
-                left: calc(100% + 5px);
-                opacity: 0;
-            }
-        }
+		.timeline-track {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			right: 0;
+			height: 3px;
+			background: linear-gradient(90deg,
+					rgba(99, 102, 241, 0.1) 0%,
+					rgba(99, 102, 241, 0.3) 50%,
+					rgba(99, 102, 241, 0.1) 100%);
+			transform: translateY(-50%);
+		}
 
-        .experience-icon {
-            position: absolute;
-            top: -40px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 24px;
-            height: 24px;
-            background: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #6366f1;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
+		.timeline-glow {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 100%;
+			height: 10px;
+			background: linear-gradient(90deg,
+					transparent 0%,
+					#6366f1 50%,
+					transparent 100%);
+			filter: blur(8px);
+			transform: translateY(-50%);
+			opacity: 0.3;
+			animation: glowPulse 3s infinite;
+		}
 
-        .timeline-line::before,
-        .timeline-line::after {
-            content: none;
-        }
+		.timeline-particles {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 100%;
+			height: 20px;
+			transform: translateY(-50%);
+		}
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(var(--rotate, 0)); }
-            50% { transform: translateY(-20px) rotate(var(--rotate, 0)); }
-        }
+		.particle {
+			position: absolute;
+			width: 4px;
+			height: 4px;
+			background: #6366f1;
+			border-radius: 50%;
+			animation: particleFloat 8s infinite linear;
+		}
 
-        .animate-float {
-            animation: float 6s ease-in-out infinite;
-        }
+		.particle::before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 20px;
+			height: 1px;
+			background: linear-gradient(90deg, #6366f1, transparent);
+			transform: translate(-50%, -50%);
+		}
 
-        .animation-delay-2000 {
-            animation-delay: 2s;
-        }
+		@keyframes glowPulse {
 
-        .animation-delay-4000 {
-            animation-delay: 4s;
-        }
-    </style>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'inter': ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        dark: {
-                            50: '#171717',
-                            100: '#1F1F1F',
-                            200: '#262626',
-                            300: '#2E2E2E',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <script>
-        // Check system dark mode preference
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.documentElement.classList.add('dark')
-        }
+			0%,
+			100% {
+				opacity: 0.3;
+			}
 
-        function toggleDarkMode() {
-            document.documentElement.classList.toggle('dark')
-        }
-    </script>
-    <script>
-        // Add modal functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const modals = {};
-            const projects = [
-                {
-                    id: 1,
-                    title: "Project One",
-                    category: "Web Development",
-                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Features include responsive design, modern UI components, and seamless user experience.",
-                    technologies: ["React", "Node.js", "MongoDB"],
-                    liveLink: "https://project1.com",
-                    githubLink: "https://github.com/username/project1",
-                    image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800"
-                },
-                {
-                    id: 2,
-                    title: "Project Two",
-                    category: "UI/UX Design",
-                    description: "A comprehensive UI/UX design project focusing on user experience and interface design. Created wireframes, prototypes, and final designs for a mobile application.",
-                    technologies: ["Figma", "Adobe XD", "Sketch"],
-                    liveLink: "https://project2.com",
-                    githubLink: "https://github.com/username/project2",
-                    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800"
-                },
-                {
-                    id: 3,
-                    title: "Project Three",
-                    category: "Mobile App",
-                    description: "Mobile application development project using React Native. Features include real-time updates, offline functionality, and seamless synchronization.",
-                    technologies: ["React Native", "Firebase", "Redux"],
-                    liveLink: "https://project3.com",
-                    githubLink: "https://github.com/username/project3",
-                    image: "https://images.unsplash.com/photo-1555421689-d68471e189f2?w=800"
-                },
-                {
-                    id: 4,
-                    title: "Project Four",
-                    category: "E-commerce",
-                    description: "Full-stack e-commerce platform with features like product management, cart functionality, payment integration, and order tracking.",
-                    technologies: ["Next.js", "Stripe", "PostgreSQL"],
-                    liveLink: "https://project4.com",
-                    githubLink: "https://github.com/username/project4",
-                    image: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=800"
-                },
-                {
-                    id: 5,
-                    title: "Project Five",
-                    category: "Brand Design",
-                    description: "Complete brand identity design including logo, color palette, typography, and brand guidelines for a tech startup.",
-                    technologies: ["Illustrator", "Photoshop", "InDesign"],
-                    liveLink: "https://project5.com",
-                    githubLink: "https://github.com/username/project5",
-                    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800"
-                },
-                {
-                    id: 6,
-                    title: "Project Six",
-                    category: "Web Application",
-                    description: "Modern web application built with Vue.js and Firebase. Features include authentication, real-time database, and cloud functions.",
-                    technologies: ["Vue.js", "Firebase", "Tailwind CSS"],
-                    liveLink: "https://project6.com",
-                    githubLink: "https://github.com/username/project6",
-                    image: "https://images.unsplash.com/photo-1559028012-481c04fa702d?w=800"
-                }
-            ];
+			50% {
+				opacity: 0.5;
+			}
+		}
 
-            // Create modals for each project
-            projects.forEach(project => {
-                const modalHTML = `
+		@keyframes particleFloat {
+			0% {
+				left: -5px;
+				opacity: 0;
+			}
+
+			10% {
+				opacity: 1;
+			}
+
+			90% {
+				opacity: 1;
+			}
+
+			100% {
+				left: calc(100% + 5px);
+				opacity: 0;
+			}
+		}
+
+		.experience-icon {
+			position: absolute;
+			top: -40px;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 24px;
+			height: 24px;
+			background: white;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: #6366f1;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		}
+
+		.timeline-line::before,
+		.timeline-line::after {
+			content: none;
+		}
+
+		@keyframes float {
+
+			0%,
+			100% {
+				transform: translateY(0) rotate(var(--rotate, 0));
+			}
+
+			50% {
+				transform: translateY(-20px) rotate(var(--rotate, 0));
+			}
+		}
+
+		.animate-float {
+			animation: float 6s ease-in-out infinite;
+		}
+
+		.animation-delay-2000 {
+			animation-delay: 2s;
+		}
+
+		.animation-delay-4000 {
+			animation-delay: 4s;
+		}
+	</style>
+	<script>
+		tailwind.config = {
+			darkMode: 'class',
+			theme: {
+				extend: {
+					fontFamily: {
+						'inter': ['Inter', 'sans-serif'],
+					},
+					colors: {
+						dark: {
+							50: '#171717',
+							100: '#1F1F1F',
+							200: '#262626',
+							300: '#2E2E2E',
+						}
+					}
+				}
+			}
+		}
+	</script>
+	<script>
+		// Check system dark mode preference
+		if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			document.documentElement.classList.add('dark')
+		}
+
+		function toggleDarkMode() {
+			document.documentElement.classList.toggle('dark')
+		}
+	</script>
+	<script>
+		// Add modal functionality
+		document.addEventListener('DOMContentLoaded', function () {
+			const modals = {};
+			const projects = [
+				{
+					id: 1,
+					title: "Project One",
+					category: "Web Development",
+					description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Features include responsive design, modern UI components, and seamless user experience.",
+					technologies: ["React", "Node.js", "MongoDB"],
+					liveLink: "https://project1.com",
+					githubLink: "https://github.com/username/project1",
+					image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800"
+				},
+				{
+					id: 2,
+					title: "Project Two",
+					category: "UI/UX Design",
+					description: "A comprehensive UI/UX design project focusing on user experience and interface design. Created wireframes, prototypes, and final designs for a mobile application.",
+					technologies: ["Figma", "Adobe XD", "Sketch"],
+					liveLink: "https://project2.com",
+					githubLink: "https://github.com/username/project2",
+					image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800"
+				},
+				{
+					id: 3,
+					title: "Project Three",
+					category: "Mobile App",
+					description: "Mobile application development project using React Native. Features include real-time updates, offline functionality, and seamless synchronization.",
+					technologies: ["React Native", "Firebase", "Redux"],
+					liveLink: "https://project3.com",
+					githubLink: "https://github.com/username/project3",
+					image: "https://images.unsplash.com/photo-1555421689-d68471e189f2?w=800"
+				},
+				{
+					id: 4,
+					title: "Project Four",
+					category: "E-commerce",
+					description: "Full-stack e-commerce platform with features like product management, cart functionality, payment integration, and order tracking.",
+					technologies: ["Next.js", "Stripe", "PostgreSQL"],
+					liveLink: "https://project4.com",
+					githubLink: "https://github.com/username/project4",
+					image: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=800"
+				},
+				{
+					id: 5,
+					title: "Project Five",
+					category: "Brand Design",
+					description: "Complete brand identity design including logo, color palette, typography, and brand guidelines for a tech startup.",
+					technologies: ["Illustrator", "Photoshop", "InDesign"],
+					liveLink: "https://project5.com",
+					githubLink: "https://github.com/username/project5",
+					image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800"
+				},
+				{
+					id: 6,
+					title: "Project Six",
+					category: "Web Application",
+					description: "Modern web application built with Vue.js and Firebase. Features include authentication, real-time database, and cloud functions.",
+					technologies: ["Vue.js", "Firebase", "Tailwind CSS"],
+					liveLink: "https://project6.com",
+					githubLink: "https://github.com/username/project6",
+					image: "https://images.unsplash.com/photo-1559028012-481c04fa702d?w=800"
+				}
+			];
+
+			// Create modals for each project
+			projects.forEach(project => {
+				const modalHTML = `
                     <div id="modal-${project.id}" class="fixed inset-0 bg-black/50 dark:bg-black/70 z-50 hidden backdrop-blur-sm">
                         <div class="min-h-screen px-4 text-center">
                             <div class="fixed inset-0 transition-opacity" aria-hidden="true">
@@ -283,11 +315,11 @@
                                     <div>
                                         <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Technologies Used:</h4>
                                         <div class="flex flex-wrap gap-2">
-                                            ${project.technologies.map(tech => 
-                                                `<span class="px-3 py-1 text-sm text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-dark-300 rounded-full">
+                                            ${project.technologies.map(tech =>
+					`<span class="px-3 py-1 text-sm text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-dark-300 rounded-full">
                                                     ${tech}
                                                 </span>`
-                                            ).join('')}
+				).join('')}
                                         </div>
                                     </div>
                                     <div class="flex gap-4 pt-4 border-t border-gray-200 dark:border-gray-700">
@@ -305,507 +337,569 @@
                         </div>
                     </div>
                 `;
-                document.body.insertAdjacentHTML('beforeend', modalHTML);
-                modals[project.id] = document.getElementById(`modal-${project.id}`);
-            });
+				document.body.insertAdjacentHTML('beforeend', modalHTML);
+				modals[project.id] = document.getElementById(`modal-${project.id}`);
+			});
 
-            // Add click handlers to project cards
-            document.querySelectorAll('.project-card').forEach((card, index) => {
-                card.addEventListener('click', () => {
-                    modals[index + 1].classList.remove('hidden');
-                });
-            });
+			// Add click handlers to project cards
+			document.querySelectorAll('.project-card').forEach((card, index) => {
+				card.addEventListener('click', () => {
+					modals[index + 1].classList.remove('hidden');
+				});
+			});
 
-            // Add click handlers to close buttons
-            document.querySelectorAll('.modal-close').forEach(button => {
-                button.addEventListener('click', () => {
-                    button.closest('[id^="modal-"]').classList.add('hidden');
-                });
-            });
+			// Add click handlers to close buttons
+			document.querySelectorAll('.modal-close').forEach(button => {
+				button.addEventListener('click', () => {
+					button.closest('[id^="modal-"]').classList.add('hidden');
+				});
+			});
 
-            // Close modal when clicking outside
-            window.addEventListener('click', (e) => {
-                if (e.target.matches('[id^="modal-"]')) {
-                    e.target.classList.add('hidden');
-                }
-            });
-        });
+			// Close modal when clicking outside
+			window.addEventListener('click', (e) => {
+				if (e.target.matches('[id^="modal-"]')) {
+					e.target.classList.add('hidden');
+				}
+			});
+		});
 
-        // Generate floating particles
-        function createParticles() {
-            const container = document.querySelector('.timeline-particles');
-            for (let i = 0; i < 5; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.animationDelay = `${i * 1.5}s`;
-                particle.style.top = `${Math.random() * 20 - 10}px`;
-                container.appendChild(particle);
-            }
-        }
+		// Generate floating particles
+		function createParticles() {
+			const container = document.querySelector('.timeline-particles');
+			for (let i = 0; i < 5; i++) {
+				const particle = document.createElement('div');
+				particle.className = 'particle';
+				particle.style.animationDelay = `${i * 1.5}s`;
+				particle.style.top = `${Math.random() * 20 - 10}px`;
+				container.appendChild(particle);
+			}
+		}
 
-        // Call when DOM is loaded
-        document.addEventListener('DOMContentLoaded', createParticles);
-    </script>
+		// Call when DOM is loaded
+		document.addEventListener('DOMContentLoaded', createParticles);
+	</script>
 </head>
-<body class="bg-gradient-to-br from-indigo-50/50 via-white to-purple-50/50 dark:from-dark-50 dark:via-dark-100 dark:to-dark-200 text-gray-800 dark:text-gray-100 font-inter leading-relaxed overflow-x-hidden transition-all duration-300">
-    <!-- Background Elements -->
-    <div class="fixed inset-0 grid-bg opacity-30 z-0"></div>
-    
-    <header class="fixed top-0 left-0 right-0 p-4 z-50 bg-gradient-to-b from-white/80 via-white/70 to-white/50 dark:from-dark-50/90 dark:via-dark-50/80 dark:to-dark-50/50 backdrop-blur-lg border-b border-gray-200/20 dark:border-white/10">
-        <div class="max-w-7xl mx-auto">
-            <div class="px-4 py-2 flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-0">
-                <div class="flex items-center justify-between">
-                    <div class="text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                        SIDHARTHAN C KAMARAJ
-                    </div>
-                    <button class="md:hidden text-gray-600 dark:text-gray-300" onclick="toggleMenu()">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
-                <nav class="hidden md:flex items-center gap-3" id="mobile-menu">
-                    <a href="#home" class="px-3 py-1.5 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Home</a>
-                    <a href="#about" class="px-3 py-1.5 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">About</a>
-                    <a href="#works" class="px-3 py-1.5 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Works</a>
-                    <a href="#contact" class="px-4 py-1.5 bg-indigo-600 dark:bg-indigo-500 text-white rounded-lg hover:bg-indigo-700 dark:hover:bg-indigo-600 transition-all transform hover:scale-105 shadow-sm hover:shadow-indigo-200/20">Contact</a>
-                    <button onclick="toggleDarkMode()" class="p-1.5 px-3 ml-2 rounded-lg bg-gray-100 dark:bg-dark-300 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-dark-200 transition-colors border border-gray-200/20 dark:border-white/10">
-                        <i class="fas fa-moon dark:hidden"></i>
-                        <i class="fas fa-sun hidden dark:inline"></i>
-                    </button>
-                </nav>
-            </div>
-        </div>
-    </header>
 
-    <!-- Add this script for navbar scroll effect -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const header = document.querySelector('header');
-            
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    header.classList.add('shadow-md');
-                } else {
-                    header.classList.remove('shadow-md');
-                }
-            });
-        });
-    </script>
+<body
+	class="bg-gradient-to-br from-indigo-50/50 via-white to-purple-50/50 dark:from-dark-50 dark:via-dark-100 dark:to-dark-200 text-gray-800 dark:text-gray-100 font-inter leading-relaxed overflow-x-hidden transition-all duration-300">
+	<!-- Background Elements -->
+	<div class="fixed inset-0 grid-bg opacity-30 z-0"></div>
 
-    <section id="home" class="min-h-screen relative z-10 overflow-hidden pt-20">
-        <div class="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-dark-50 dark:via-dark-100 dark:to-dark-200"></div>
-        
-        <!-- Decorative elements -->
-        <div class="absolute inset-0">
-            <div class="absolute top-20 left-10 w-32 h-32 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-            <div class="absolute top-40 right-10 w-32 h-32 bg-indigo-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-            <div class="absolute -bottom-8 left-20 w-32 h-32 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-        </div>
+	<header
+		class="fixed top-0 left-0 right-0 p-4 z-50 bg-gradient-to-b from-white/80 via-white/70 to-white/50 dark:from-dark-50/90 dark:via-dark-50/80 dark:to-dark-50/50 backdrop-blur-lg border-b border-gray-200/20 dark:border-white/10">
+		<div class="max-w-7xl mx-auto">
+			<div class="px-4 py-2 flex items-center justify-between">
+				<div class="text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+					JOHN DOE
+				</div>
+				<div class="flex items-center gap-4">
+					<nav class="hidden md:flex items-center gap-3" id="mobile-menu">
+						<a href="#home" class="px-3 py-1.5 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Home</a>
+						<a href="#about" class="px-3 py-1.5 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">About</a>
+						<a href="#works" class="px-3 py-1.5 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Works</a>
+						<a href="#contact" class="px-4 py-1.5 bg-indigo-600 dark:bg-indigo-500 text-white rounded-lg hover:bg-indigo-700 dark:hover:bg-indigo-600 transition-all transform hover:scale-105 shadow-sm hover:shadow-indigo-200/20">Contact</a>
+					</nav>
+					<button onclick="toggleDarkMode()" class="p-1.5 px-3 rounded-lg bg-gray-100 dark:bg-dark-300 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-dark-200 transition-colors border border-gray-200/20 dark:border-white/10">
+						<i class="fas fa-moon dark:hidden"></i>
+						<i class="fas fa-sun hidden dark:inline"></i>
+					</button>
+					<button class="md:hidden text-gray-600 dark:text-gray-300" onclick="toggleMenu()">
+						<i class="fas fa-bars"></i>
+					</button>
+				</div>
+			</div>
+			<!-- Mobile menu dropdown -->
+			<div class="md:hidden">
+				<div class="hidden px-4 py-2 bg-white/95 dark:bg-dark-200/95 rounded-lg mt-2 shadow-lg" id="mobile-menu-dropdown">
+					<div class="flex flex-col gap-2">
+						<a href="#home" class="px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Home</a>
+						<a href="#about" class="px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">About</a>
+						<a href="#works" class="px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Works</a>
+						<a href="#contact" class="px-4 py-2 bg-indigo-600 dark:bg-indigo-500 text-white rounded-lg hover:bg-indigo-700 dark:hover:bg-indigo-600 transition-all text-center">Contact</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
 
-        <div class="max-w-7xl mx-auto h-[calc(100vh-5rem)] px-8 flex flex-col lg:flex-row items-center justify-between relative">
-            <!-- Content -->
-            <div class="max-w-2xl w-full lg:w-auto">
-                <div class="inline-block px-4 py-2 bg-white/50 dark:bg-dark-200/50 backdrop-blur-sm rounded-full mb-4 shadow-sm border border-gray-200/20 dark:border-white/10">
-                    <span class="text-indigo-600 dark:text-indigo-400 font-semibold">👋 WELCOME TO MY PORTFOLIO</span>
-                </div>
-                <h1 class="text-6xl font-bold my-10 bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">
-                    Golang Developer @ ING Nederland
-                </h1>
-                <p class="text-xl mb-8 text-gray-600 dark:text-gray-200 leading-relaxed">
-                Crafting robust cloud-native solutions with Go at ING Nederland. I specialize in building high-performance, scalable systems that power modern financial services.
-                </p>
-                <div class="flex gap-4 mb-8">
-                    <a href="#about" class="inline-flex items-center px-8 py-4 bg-indigo-600 text-white rounded-2xl hover:bg-indigo-700 transition-all transform hover:scale-105 shadow-lg hover:shadow-indigo-200">
-                        <span>MORE ABOUT ME</span>
-                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                        </svg>
-                    </a>
-                    <a href="#works" class="inline-flex items-center px-8 py-4 border-2 border-indigo-600 text-indigo-600 rounded-2xl hover:bg-indigo-50 transition-all transform hover:scale-105">
-                        VIEW WORKS
-                    </a>
-                </div>
-                <div class="flex items-center gap-4 text-gray-600 dark:text-gray-400">
-                    <div class="flex -space-x-2">
-                        <div class="w-10 h-10 rounded-full bg-indigo-100 dark:bg-dark-300 flex items-center justify-center">
-                            <i class="fab fa-golang text-indigo-600 dark:text-indigo-400"></i>
-                        </div>
-                        <div class="w-10 h-10 rounded-full bg-purple-100 dark:bg-dark-300 flex items-center justify-center">
-                            <i class="fab fa-vuejs text-purple-600 dark:text-purple-400"></i>
-                        </div>
-                        <div class="w-10 h-10 rounded-full bg-blue-100 dark:bg-dark-300 flex items-center justify-center">
-                            <i class="fab fa-docker text-blue-600 dark:text-blue-400"></i>
-                        </div>
-						<div class="w-10 h-10 rounded-full bg-blue-100 dark:bg-dark-300 flex items-center justify-center">
-                            <i class="fab fa-git text-blue-600 dark:text-blue-400"></i>
-                        </div>
-                    </div>
-                    <span class="text-sm">Tech Stack</span>
-                </div>
-            </div>
+	<!-- Add this script for navbar scroll effect -->
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			const header = document.querySelector('header');
 
-            <!-- AI Avatar -->
-            <div class="relative hidden lg:block">
-                <div class="absolute -top-20 -right-20 w-96 h-96 bg-gradient-to-br from-indigo-200 to-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-70"></div>
-                <div class="relative">
-                    <div class="w-[450px] h-[450px] rounded-full bg-gradient-to-br from-indigo-100 to-purple-100 flex items-center justify-center p-4">
-                        <img src="../images/ai_avatar.png" 
-                             alt="AI Avatar" 
-                             class="w-full h-full object-cover rounded-full shadow-2xl"
-                             style="clip-path: circle(50% at 50% 50%);">
-                    </div>
-                    <!-- Floating elements -->
-                    <div class="absolute top-10 right-0 w-20 h-20 bg-white rounded-2xl shadow-lg flex items-center justify-center rotate-12 animate-float">
-                        <i class="fas fa-brain text-3xl text-indigo-600"></i>
-                    </div>
-                    <div class="absolute bottom-10 left-0 w-20 h-20 bg-white rounded-2xl shadow-lg flex items-center justify-center -rotate-12 animate-float animation-delay-2000">
-                        <i class="fas fa-code text-3xl text-purple-600"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
+			window.addEventListener('scroll', () => {
+				if (window.scrollY > 50) {
+					header.classList.add('shadow-md');
+				} else {
+					header.classList.remove('shadow-md');
+				}
+			});
+		});
+	</script>
 
-        <!-- Scroll indicator -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <a href="#about" class="text-gray-400 hover:text-gray-600 transition-colors">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                </svg>
-            </a>
-        </div>
-    </section>
+	<section id="home" class="min-h-screen relative z-10 overflow-hidden pt-20">
+		<div
+			class="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-dark-50 dark:via-dark-100 dark:to-dark-200">
+		</div>
 
-    <section id="about" class="min-h-screen px-4 lg:px-16 py-16 lg:py-24 relative z-10">
-        <div class="absolute inset-0 bg-gradient-to-br from-white/50 via-transparent to-indigo-50/30 dark:from-dark-100/50 dark:via-transparent dark:to-dark-200/30"></div>
-        <div class="max-w-6xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center mb-16">
-                <div class="relative">
-                    <div class="absolute -top-4 -left-4 w-full h-full bg-indigo-100 rounded-2xl blur-sm"></div>
-                    <div class="absolute -top-2 -left-2 w-full h-full bg-indigo-200/50 rounded-2xl"></div>
-                    <img src="../images/photo.jpeg" 
-                         alt="Profile Picture" 
-                         class="relative z-10 w-full h-[500px] object-cover rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 ring-2 ring-indigo-100">
-                </div>
-                <div>
-                    <span class="text-indigo-600 font-semibold mb-2 block">ABOUT ME</span>
-                    <h2 class="text-4xl font-bold mb-6">Crafting Digital Experiences with Passion</h2>
-                    <p class="text-gray-600 dark:text-gray-200 mb-6">
-                    Hello! I'm Sidharthan, a Software Developer specializing in cloud technologies and Kubernetes. I focus on building scalable, resilient cloud-native applications and infrastructure solutions that drive business value. My expertise spans container orchestration, microservices architecture, and distributed systems.
-					<br>
-					<br>
-                    I'm proficient in Golang and passionate about self-hosting solutions, with a deep commitment to writing clean, efficient code. As an active open-source contributor and Linux enthusiast, I stay at the forefront of technology by continuously exploring and implementing innovative solutions. Outside work, I'm an avid Formula 1 fan, merging my love for tech and motorsports.
-                    </p>
-                    <div class="grid grid-cols-2 gap-4 mb-6">
+		<!-- Decorative elements -->
+		<div class="absolute inset-0">
+			<div
+				class="absolute top-20 left-10 w-32 h-32 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob">
+			</div>
+			<div
+				class="absolute top-40 right-10 w-32 h-32 bg-indigo-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000">
+			</div>
+			<div
+				class="absolute -bottom-8 left-20 w-32 h-32 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000">
+			</div>
+		</div>
+
+		<div
+			class="max-w-7xl mx-auto h-[calc(100vh-5rem)] px-8 flex flex-col lg:flex-row items-center justify-between relative">
+			<!-- Content -->
+			<div class="max-w-2xl w-full lg:w-auto">
+				<div
+					class="inline-block px-4 py-2 bg-white/50 dark:bg-dark-200/50 backdrop-blur-sm rounded-full mb-4 shadow-sm border border-gray-200/20 dark:border-white/10">
+					<span class="text-indigo-600 dark:text-indigo-400 font-semibold">👋 WELCOME TO MY PORTFOLIO</span>
+				</div>
+				<h1
+					class="text-6xl font-bold my-10 bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">
+					Golang Developer @ ING Nederland
+				</h1>
+				<p class="text-xl mb-8 text-gray-600 dark:text-gray-200 leading-relaxed">
+					Crafting robust cloud-native solutions with Go at ING Nederland. I specialize in building
+					high-performance, scalable systems that power modern financial services.
+				</p>
+				<div class="flex gap-4 mb-8">
+					<a href="#about"
+						class="inline-flex items-center px-8 py-4 bg-indigo-600 text-white rounded-2xl hover:bg-indigo-700 transition-all transform hover:scale-105 shadow-lg hover:shadow-indigo-200">
+						<span>MORE ABOUT ME</span>
+						<svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								d="M13 7l5 5m0 0l-5 5m5-5H6" />
+						</svg>
+					</a>
+					<a href="#works"
+						class="inline-flex items-center px-8 py-4 border-2 border-indigo-600 text-indigo-600 rounded-2xl hover:bg-indigo-50 transition-all transform hover:scale-105">
+						VIEW WORKS
+					</a>
+				</div>
+				<div class="flex items-center gap-4 text-gray-600 dark:text-gray-400">
+					<div class="flex -space-x-2">
+						<div
+							class="w-10 h-10 rounded-full bg-indigo-100 dark:bg-dark-300 flex items-center justify-center">
+							<i class="fab fa-golang text-indigo-600 dark:text-indigo-400"></i>
+						</div>
+						<div
+							class="w-10 h-10 rounded-full bg-purple-100 dark:bg-dark-300 flex items-center justify-center">
+							<i class="fab fa-vuejs text-purple-600 dark:text-purple-400"></i>
+						</div>
+						<div
+							class="w-10 h-10 rounded-full bg-blue-100 dark:bg-dark-300 flex items-center justify-center">
+							<i class="fab fa-docker text-blue-600 dark:text-blue-400"></i>
+						</div>
+						<div
+							class="w-10 h-10 rounded-full bg-blue-100 dark:bg-dark-300 flex items-center justify-center">
+							<i class="fab fa-git text-blue-600 dark:text-blue-400"></i>
+						</div>
+					</div>
+					<span class="text-sm">Tech Stack</span>
+				</div>
+			</div>
+
+			<!-- AI Avatar -->
+			<div class="relative hidden lg:block">
+				<div
+					class="absolute -top-20 -right-20 w-96 h-96 bg-gradient-to-br from-indigo-200 to-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-70">
+				</div>
+				<div class="relative">
+					<div
+						class="w-[450px] h-[450px] rounded-full bg-gradient-to-br from-indigo-100 to-purple-100 flex items-center justify-center p-4">
+						<img src="../images/ai_avatar.png" alt="AI Avatar"
+							class="w-full h-full object-cover rounded-full shadow-2xl"
+							style="clip-path: circle(50% at 50% 50%);">
+					</div>
+					<!-- Floating elements -->
+					<div
+						class="absolute top-10 right-0 w-20 h-20 bg-white rounded-2xl shadow-lg flex items-center justify-center rotate-12 animate-float">
+						<i class="fas fa-brain text-3xl text-indigo-600"></i>
+					</div>
+					<div
+						class="absolute bottom-10 left-0 w-20 h-20 bg-white rounded-2xl shadow-lg flex items-center justify-center -rotate-12 animate-float animation-delay-2000">
+						<i class="fas fa-code text-3xl text-purple-600"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Scroll indicator -->
+		<div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+			<a href="#about" class="text-gray-400 hover:text-gray-600 transition-colors">
+				<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+						d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+				</svg>
+			</a>
+		</div>
+	</section>
+
+	<section id="about" class="min-h-screen px-4 lg:px-16 py-16 lg:py-24 relative z-10">
+		<div
+			class="absolute inset-0 bg-gradient-to-br from-white/50 via-transparent to-indigo-50/30 dark:from-dark-100/50 dark:via-transparent dark:to-dark-200/30">
+		</div>
+		<div class="max-w-6xl mx-auto">
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center mb-16">
+				<div class="relative">
+					<div class="absolute -top-4 -left-4 w-full h-full bg-indigo-100 rounded-2xl blur-sm"></div>
+					<div class="absolute -top-2 -left-2 w-full h-full bg-indigo-200/50 rounded-2xl"></div>
+					<img src="../images/photo.jpeg" alt="Profile Picture"
+						class="relative z-10 w-full h-[500px] object-cover rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 ring-2 ring-indigo-100">
+				</div>
+				<div>
+					<span class="text-indigo-600 font-semibold mb-2 block">ABOUT ME</span>
+					<h2 class="text-4xl font-bold mb-6">Crafting Digital Experiences with Passion</h2>
+					<p class="text-gray-600 dark:text-gray-200 mb-6">
+						Hello! I'm Sidharthan, a Software Developer specializing in cloud technologies and Kubernetes. I
+						focus on building scalable, resilient cloud-native applications and infrastructure solutions
+						that drive business value. My expertise spans container orchestration, microservices
+						architecture, and distributed systems.
+						<br>
+						<br>
+						I'm proficient in Golang and passionate about self-hosting solutions, with a deep commitment to
+						writing clean, efficient code. As an active open-source contributor and Linux enthusiast, I stay
+						at the forefront of technology by continuously exploring and implementing innovative solutions.
+						Outside work, I'm an avid Formula 1 fan, merging my love for tech and motorsports.
+					</p>
+					<div class="grid grid-cols-2 gap-4 mb-6">
 						<div class="p-4 bg-white dark:bg-dark-200 rounded-lg shadow-sm">
-                            <h3 class="font-bold mb-2 dark:text-white">Backend Development</h3>
-                            <p class="text-gray-600 dark:text-gray-300">Golang, Python, Helm, Kubernetes, Docker</p>
-                        </div>
-                        <div class="p-4 bg-white dark:bg-dark-200 rounded-lg shadow-sm">
-                            <h3 class="font-bold mb-2 dark:text-white">Frontend Development</h3>
-                            <p class="text-gray-600 dark:text-gray-300">Vue, Nuxt, Tailwind CSS</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+							<h3 class="font-bold mb-2 dark:text-white">Backend Development</h3>
+							<p class="text-gray-600 dark:text-gray-300">Golang, Python, Helm, Kubernetes, Docker</p>
+						</div>
+						<div class="p-4 bg-white dark:bg-dark-200 rounded-lg shadow-sm">
+							<h3 class="font-bold mb-2 dark:text-white">Frontend Development</h3>
+							<p class="text-gray-600 dark:text-gray-300">Vue, Nuxt, Tailwind CSS</p>
+						</div>
+					</div>
+				</div>
+			</div>
 
-            <div class="relative">
-                <span class="text-indigo-600 font-semibold mb-2 block">MY JOURNEY</span>
-                <h2 class="text-3xl font-bold mb-12">Education & Experience</h2>
-                
-                <!-- Horizontal Timeline -->
-                <div class="relative">
-                    <!-- Timeline Line -->
-                    <div class="absolute top-[50px] left-0 right-0">
-                        <div class="timeline-line mx-12">
-                            <div class="timeline-track"></div>
-                            <div class="timeline-glow"></div>
-                            <div class="timeline-particles">
-                                <!-- Generate particles dynamically with JavaScript -->
-                            </div>
-                            <svg viewBox="0 0 1200 40" preserveAspectRatio="none" class="absolute top-0 left-0 w-full h-full">
-                                <path d="M0,20 Q300,5 600,20 T1200,20" 
-                                      stroke="url(#gradient)" 
-                                      stroke-width="1.5" 
-                                      fill="none" 
-                                      vector-effect="non-scaling-stroke"
-                                      stroke-dasharray="5,5" />
-                            </svg>
-                        </div>
-                    </div>
-                    
-                    <!-- Timeline Items Container -->
-                    <div class="flex flex-col lg:flex-row justify-between relative px-4 lg:px-12 space-y-8 lg:space-y-0 pt-10">
-                        <!-- Timeline Item 1 -->
-                        <div class="relative group">
-                            <div class="flex flex-col items-center">
-                                <div class="experience-icon">
-                                    <i class="fas fa-graduation-cap"></i>
-                                </div>
-                                <!-- Year and Logo -->
-                                <div class="w-24 h-24 bg-white rounded-full shadow-lg flex items-center justify-center mb-4 z-10">
-                                    <img src="../images/anna_univ.png" 
-                                         alt="Anna University Logo" 
-                                         class="w-12 h-12 object-contain">
-                                </div>
-                                <span class="text-indigo-600 font-semibold">2012-2016</span>
-                                
-                                <!-- Hover Card -->
-                                <div class="absolute top-32 left-1/2 -translate-x-1/2 w-64 bg-white dark:bg-dark-200 p-4 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-200/20 dark:border-white/10">
-                                    <h3 class="font-bold text-lg mb-2 text-gray-800 dark:text-white">Anna University</h3>
-                                    <h4 class="text-indigo-600 dark:text-indigo-400 font-semibold mb-2">B.E. Electrical and Electronics Engineering</h4>
-                                    <p class="text-sm text-gray-600 dark:text-gray-300">Graduated with First Class</p>
-                                </div>
-                            </div>
-                        </div>
+			<div class="relative mt-16">
+				<span class="text-indigo-600 font-semibold mb-2 block">MY JOURNEY</span>
+				<h2 class="text-3xl font-bold mb-12">Education & Experience</h2>
 
-                        <!-- Timeline Item 2 -->
-                        <div class="relative group">
-                            <div class="flex flex-col items-center">
-                                <div class="experience-icon">
-                                    <i class="fas fa-briefcase"></i>
-                                </div>
-                                <div class="w-24 h-24 bg-white rounded-full shadow-lg flex items-center justify-center mb-4 z-10">
-                                    <img src="../images/bny.png" 
-                                         alt="BNY Mellon Logo" 
-                                         class="w-12 h-12 object-contain">
-                                </div>
-                                <span class="text-indigo-600 font-semibold">2016-2019</span>
-                                
-                                <div class="absolute top-32 left-1/2 -translate-x-1/2 w-64 bg-white dark:bg-dark-200 p-4 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-200/20 dark:border-white/10">
-                                    <h3 class="font-bold text-lg mb-2 text-gray-800 dark:text-white">BNY Mellon</h3>
-                                    <h4 class="text-indigo-600 dark:text-indigo-400 font-semibold mb-2">Senior Application Developer</h4>
-                                    <p class="text-sm text-gray-600 dark:text-gray-300">Developed and maintained client websites and web applications.</p>
-                                </div>
-                            </div>
-                        </div>
+				<!-- Modern Vertical Timeline -->
+				<div class="relative">
+					<!-- Timeline line -->
+					<div class="absolute left-8 md:left-1/2 h-full w-0.5 bg-gradient-to-b from-indigo-200 via-indigo-400 to-purple-400 transform -translate-x-1/2"></div>
 
-                        <!-- Timeline Item 3 -->
-                        <div class="relative group">
-                            <div class="flex flex-col items-center">
-                                <div class="experience-icon">
-                                    <i class="fas fa-graduation-cap"></i>
-                                </div>
-                                <div class="w-24 h-24 bg-white rounded-full shadow-lg flex items-center justify-center mb-4 z-10">
-                                    <img src="../images/ucc.png" 
-                                         alt="University College Cork Logo" 
-                                         class="w-12 h-12 object-contain">
-                                </div>
-                                <span class="text-indigo-600 font-semibold">2019-2020</span>
-                                
-                                <div class="absolute top-32 left-1/2 -translate-x-1/2 w-64 bg-white dark:bg-dark-200 p-4 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-200/20 dark:border-white/10">
-                                    <h3 class="font-bold text-lg mb-2 text-gray-800 dark:text-white">University College Cork</h3>
-                                    <h4 class="text-indigo-600 dark:text-indigo-400 font-semibold mb-2">M.Sc. Business Information and Analytical Systems</h4>
-                                    <p class="text-sm text-gray-600 dark:text-gray-300">First Class Honours</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-					<!-- Timeline Item 4 -->
-					<div class="relative group">
-						<div class="flex flex-col items-center">
-							<div class="experience-icon">
-								<i class="fas fa-graduation-cap"></i>
+					<!-- Timeline items container -->
+					<div class="space-y-12">
+						<!-- Timeline Item 1 -->
+						<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+							<div class="flex items-center w-full md:w-1/2 md:odd:pl-16 md:even:pr-16 md:even:text-right">
+								<div class="w-16 h-16 bg-white dark:bg-dark-200 rounded-full shadow-lg flex items-center justify-center flex-shrink-0 md:absolute md:left-1/2 md:transform md:-translate-x-1/2 z-10">
+									<img src="../images/anna_univ.png" alt="Anna University Logo" class="w-8 h-8 object-contain">
+								</div>
+								<div class="ml-8 md:ml-0 bg-white dark:bg-dark-200 p-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-full backdrop-blur-sm border border-gray-200/20 dark:border-white/10">
+									<span class="text-indigo-600 dark:text-indigo-400 font-semibold block mb-1">2012-2016</span>
+									<h3 class="font-bold text-lg text-gray-800 dark:text-white">Anna University</h3>
+									<h4 class="text-indigo-600 dark:text-indigo-400 font-semibold">B.E. Electrical and Electronics Engineering</h4>
+									<p class="text-sm text-gray-600 dark:text-gray-300 mt-2">Graduated with First Class</p>
+								</div>
 							</div>
-							<div class="w-24 h-24 bg-white rounded-full shadow-lg flex items-center justify-center mb-4 z-10">
-								<img src="../images/ucc.png" 
-									 alt="University College Cork Logo" 
-									 class="w-12 h-12 object-contain">
+						</div>
+
+						<!-- Timeline Item 2 -->
+						<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+							<div class="flex items-center w-full md:w-1/2 md:odd:pl-16 md:even:pr-16 md:even:text-right">
+								<div class="w-16 h-16 bg-white dark:bg-dark-200 rounded-full shadow-lg flex items-center justify-center flex-shrink-0 md:absolute md:left-1/2 md:transform md:-translate-x-1/2 z-10">
+									<img src="../images/bny.png" alt="BNY Mellon Logo" class="w-8 h-8 object-contain">
+								</div>
+								<div class="ml-8 md:ml-0 bg-white dark:bg-dark-200 p-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-full backdrop-blur-sm border border-gray-200/20 dark:border-white/10">
+									<span class="text-indigo-600 dark:text-indigo-400 font-semibold block mb-1">2016-2019</span>
+									<h3 class="font-bold text-lg text-gray-800 dark:text-white">BNY Mellon</h3>
+									<h4 class="text-indigo-600 dark:text-indigo-400 font-semibold">Senior Application Developer</h4>
+									<p class="text-sm text-gray-600 dark:text-gray-300 mt-2">Developed and maintained client websites and web applications.</p>
+								</div>
 							</div>
-							<span class="text-indigo-600 font-semibold">2019-2020</span>
-							
-							<div class="absolute top-32 left-1/2 -translate-x-1/2 w-64 bg-white dark:bg-dark-200 p-4 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-200/20 dark:border-white/10">
-								<h3 class="font-bold text-lg mb-2 text-gray-800 dark:text-white">University College Cork</h3>
-								<h4 class="text-indigo-600 dark:text-indigo-400 font-semibold mb-2">M.Sc. Business Information and Analytical Systems</h4>
-								<p class="text-sm text-gray-600 dark:text-gray-300">First Class Honours</p>
+						</div>
+
+						<!-- Add similar blocks for other timeline items -->
+						<!-- Timeline Item 3 -->
+						<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+							<div class="flex items-center w-full md:w-1/2 md:odd:pl-16 md:even:pr-16 md:even:text-right">
+								<div class="w-16 h-16 bg-white dark:bg-dark-200 rounded-full shadow-lg flex items-center justify-center flex-shrink-0 md:absolute md:left-1/2 md:transform md:-translate-x-1/2 z-10">
+									<img src="../images/ucc.png" alt="UCC Logo" class="w-8 h-8 object-contain">
+								</div>
+								<div class="ml-8 md:ml-0 bg-white dark:bg-dark-200 p-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-full backdrop-blur-sm border border-gray-200/20 dark:border-white/10">
+									<span class="text-indigo-600 dark:text-indigo-400 font-semibold block mb-1">2019-2020</span>
+									<h3 class="font-bold text-lg text-gray-800 dark:text-white">University College Cork</h3>
+									<h4 class="text-indigo-600 dark:text-indigo-400 font-semibold">M.Sc. Business Information and Analytical Systems</h4>
+									<p class="text-sm text-gray-600 dark:text-gray-300 mt-2">First Class Honours</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Timeline Item 4 -->
+						<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+							<div class="flex items-center w-full md:w-1/2 md:odd:pl-16 md:even:pr-16 md:even:text-right">
+								<div class="w-16 h-16 bg-white dark:bg-dark-200 rounded-full shadow-lg flex items-center justify-center flex-shrink-0 md:absolute md:left-1/2 md:transform md:-translate-x-1/2 z-10">
+									<img src="../images/nginx.png" alt="NGINX Logo" class="w-8 h-8 object-contain">
+								</div>
+								<div class="ml-8 md:ml-0 bg-white dark:bg-dark-200 p-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-full backdrop-blur-sm border border-gray-200/20 dark:border-white/10">
+									<span class="text-indigo-600 dark:text-indigo-400 font-semibold block mb-1">2020-2021</span>
+									<h3 class="font-bold text-lg text-gray-800 dark:text-white">NGINX</h3>
+									<h4 class="text-indigo-600 dark:text-indigo-400 font-semibold">Software Engineer III</h4>
+									<p class="text-sm text-gray-600 dark:text-gray-300 mt-2">Worked on the NGINX Controller Project. Used Golang, Kubernetes and Docker.</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Timeline Item 5 -->
+						<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+							<div class="flex items-center w-full md:w-1/2 md:odd:pl-16 md:even:pr-16 md:even:text-right">
+								<div class="w-16 h-16 bg-white dark:bg-dark-200 rounded-full shadow-lg flex items-center justify-center flex-shrink-0 md:absolute md:left-1/2 md:transform md:-translate-x-1/2 z-10">
+									<img src="../images/ing.png" alt="ING Logo" class="w-8 h-8 object-contain">
+								</div>
+								<div class="ml-8 md:ml-0 bg-white dark:bg-dark-200 p-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-full backdrop-blur-sm border border-gray-200/20 dark:border-white/10">
+									<span class="text-indigo-600 dark:text-indigo-400 font-semibold block mb-1">2021-2022</span>
+									<h3 class="font-bold text-lg text-gray-800 dark:text-white">Reynen Court</h3>
+									<h4 class="text-indigo-600 dark:text-indigo-400 font-semibold">Golang Developer</h4>
+									<p class="text-sm text-gray-600 dark:text-gray-300 mt-2">Building cloud-native applications and microservices using Go, Kubernetes, and modern cloud technologies.</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Timeline Item 6 -->
+						<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+							<div class="flex items-center w-full md:w-1/2 md:odd:pl-16 md:even:pr-16 md:even:text-right">
+								<div class="w-16 h-16 bg-white dark:bg-dark-200 rounded-full shadow-lg flex items-center justify-center flex-shrink-0 md:absolute md:left-1/2 md:transform md:-translate-x-1/2 z-10">
+									<img src="../images/ing.png" alt="ING Logo" class="w-8 h-8 object-contain">
+								</div>
+								<div class="ml-8 md:ml-0 bg-white dark:bg-dark-200 p-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-full backdrop-blur-sm border border-gray-200/20 dark:border-white/10">
+									<span class="text-indigo-600 dark:text-indigo-400 font-semibold block mb-1">2021-Present</span>
+									<h3 class="font-bold text-lg text-gray-800 dark:text-white">ING Nederland</h3>
+									<h4 class="text-indigo-600 dark:text-indigo-400 font-semibold">Golang Developer</h4>
+									<p class="text-sm text-gray-600 dark:text-gray-300 mt-2">Building cloud-native applications and microservices using Go, Kubernetes, and modern cloud technologies.</p>
+								</div>
 							</div>
 						</div>
 					</div>
-                </div>
-            </div>
-        </div>
-    </section>
+				</div>
+			</div>
+		</div>
+	</section>
 
-    <section id="works" class="min-h-screen px-4 lg:px-16 py-16 lg:py-24 relative z-10">
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-white/50 to-purple-50/30 dark:via-dark-100/50 dark:to-dark-200/30"></div>
-        <h2 class="text-3xl font-bold text-center mb-4">PORTFOLIO</h2>
-        <p class="text-gray-600 dark:text-gray-300 text-center mb-12 max-w-2xl mx-auto">
-            Check out some of my latest projects and creative works that showcase my skills and expertise.
-        </p>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            <div class="group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card cursor-pointer">
-                <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800" 
-                         alt="Project 1" 
-                         class="w-full h-[300px] object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-b from-black/80 to-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
-                        <div class="text-white text-center p-4">
-                            <h3 class="text-xl font-bold mb-2">Project One</h3>
-                            <p class="text-gray-200">Web Development</p>
-                            <p class="mt-2 text-sm text-gray-300">Click to view details</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card cursor-pointer">
-                <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800" 
-                         alt="Project 2" 
-                         class="w-full h-[300px] object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-b from-black/80 to-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
-                        <div class="text-white text-center p-4">
-                            <h3 class="text-xl font-bold mb-2">Project Two</h3>
-                            <p class="text-gray-200">UI/UX Design</p>
-                            <p class="mt-2 text-sm text-gray-300">Click to view details</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card cursor-pointer">
-                <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1555421689-d68471e189f2?w=800" 
-                         alt="Project 3" 
-                         class="w-full h-[300px] object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-b from-black/80 to-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
-                        <div class="text-white text-center p-4">
-                            <h3 class="text-xl font-bold mb-2">Project Three</h3>
-                            <p class="text-gray-200">Mobile App</p>
-                            <p class="mt-2 text-sm text-gray-300">Click to view details</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card cursor-pointer">
-                <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=800" 
-                         alt="Project 4" 
-                         class="w-full h-[300px] object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-b from-black/80 to-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
-                        <div class="text-white text-center p-4">
-                            <h3 class="text-xl font-bold mb-2">Project Four</h3>
-                            <p class="text-gray-200">E-commerce</p>
-                            <p class="mt-2 text-sm text-gray-300">Click to view details</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card cursor-pointer">
-                <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800" 
-                         alt="Project 5" 
-                         class="w-full h-[300px] object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-b from-black/80 to-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
-                        <div class="text-white text-center p-4">
-                            <h3 class="text-xl font-bold mb-2">Project Five</h3>
-                            <p class="text-gray-200">Brand Design</p>
-                            <p class="mt-2 text-sm text-gray-300">Click to view details</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card cursor-pointer">
-                <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?w=800" 
-                         alt="Project 6" 
-                         class="w-full h-[300px] object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-b from-black/80 to-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
-                        <div class="text-white text-center p-4">
-                            <h3 class="text-xl font-bold mb-2">Project Six</h3>
-                            <p class="text-gray-200">Web Application</p>
-                            <p class="mt-2 text-sm text-gray-300">Click to view details</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+	<section id="works" class="min-h-screen px-4 lg:px-16 py-16 lg:py-24 relative z-10">
+		<div
+			class="absolute inset-0 bg-gradient-to-b from-transparent via-white/50 to-purple-50/30 dark:via-dark-100/50 dark:to-dark-200/30">
+		</div>
+		<h2 class="text-3xl font-bold text-center mb-4">PORTFOLIO</h2>
+		<p class="text-gray-600 dark:text-gray-300 text-center mb-12 max-w-2xl mx-auto">
+			Check out some of my latest projects and creative works that showcase my skills and expertise.
+		</p>
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+			<div
+				class="group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card cursor-pointer">
+				<div class="relative">
+					<img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800" alt="Project 1"
+						class="w-full h-[300px] object-cover">
+					<div
+						class="absolute inset-0 bg-gradient-to-b from-black/80 to-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
+						<div class="text-white text-center p-4">
+							<h3 class="text-xl font-bold mb-2">Project One</h3>
+							<p class="text-gray-200">Web Development</p>
+							<p class="mt-2 text-sm text-gray-300">Click to view details</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div
+				class="group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card cursor-pointer">
+				<div class="relative">
+					<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800" alt="Project 2"
+						class="w-full h-[300px] object-cover">
+					<div
+						class="absolute inset-0 bg-gradient-to-b from-black/80 to-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
+						<div class="text-white text-center p-4">
+							<h3 class="text-xl font-bold mb-2">Project Two</h3>
+							<p class="text-gray-200">UI/UX Design</p>
+							<p class="mt-2 text-sm text-gray-300">Click to view details</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div
+				class="group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card cursor-pointer">
+				<div class="relative">
+					<img src="https://images.unsplash.com/photo-1555421689-d68471e189f2?w=800" alt="Project 3"
+						class="w-full h-[300px] object-cover">
+					<div
+						class="absolute inset-0 bg-gradient-to-b from-black/80 to-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
+						<div class="text-white text-center p-4">
+							<h3 class="text-xl font-bold mb-2">Project Three</h3>
+							<p class="text-gray-200">Mobile App</p>
+							<p class="mt-2 text-sm text-gray-300">Click to view details</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div
+				class="group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card cursor-pointer">
+				<div class="relative">
+					<img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=800" alt="Project 4"
+						class="w-full h-[300px] object-cover">
+					<div
+						class="absolute inset-0 bg-gradient-to-b from-black/80 to-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
+						<div class="text-white text-center p-4">
+							<h3 class="text-xl font-bold mb-2">Project Four</h3>
+							<p class="text-gray-200">E-commerce</p>
+							<p class="mt-2 text-sm text-gray-300">Click to view details</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div
+				class="group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card cursor-pointer">
+				<div class="relative">
+					<img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800" alt="Project 5"
+						class="w-full h-[300px] object-cover">
+					<div
+						class="absolute inset-0 bg-gradient-to-b from-black/80 to-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
+						<div class="text-white text-center p-4">
+							<h3 class="text-xl font-bold mb-2">Project Five</h3>
+							<p class="text-gray-200">Brand Design</p>
+							<p class="mt-2 text-sm text-gray-300">Click to view details</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div
+				class="group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card cursor-pointer">
+				<div class="relative">
+					<img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?w=800" alt="Project 6"
+						class="w-full h-[300px] object-cover">
+					<div
+						class="absolute inset-0 bg-gradient-to-b from-black/80 to-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
+						<div class="text-white text-center p-4">
+							<h3 class="text-xl font-bold mb-2">Project Six</h3>
+							<p class="text-gray-200">Web Application</p>
+							<p class="mt-2 text-sm text-gray-300">Click to view details</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
-    <section id="contact" class="min-h-[calc(100vh-5rem)] px-4 lg:px-16 py-16 lg:py-24 relative z-10">
-        <div class="absolute inset-0 bg-gradient-to-br from-purple-50/50 via-white/50 to-indigo-50/50 dark:from-dark-100/50 dark:via-dark-200/50 dark:to-dark-200/50"></div>
-        <div class="max-w-4xl mx-auto relative">
-            <span class="text-indigo-600 font-semibold mb-2 block">GET IN TOUCH</span>
-            <h2 class="text-3xl font-bold mb-4">Let's Work Together</h2>
-            <p class="text-gray-600 dark:text-gray-300 mb-8">Have a project in mind? Let's talk about it.</p>
-            <div class="bg-white/80 dark:bg-dark-200/80 p-8 rounded-2xl shadow-lg backdrop-blur-sm border border-gray-200/20 dark:border-white/10">
-                <p class="text-lg mb-2 text-gray-800 dark:text-gray-200">john.doe@example.com</p>
-                <p class="text-lg mb-8 text-gray-800 dark:text-gray-200">(+1) 555-123-4567</p>
-                <div class="space-x-6">
-                    <a href="#" class="text-2xl text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="#" class="text-2xl text-gray-800 dark:text-gray-200 hover:text-pink-600 dark:hover:text-pink-400 transition-colors">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="#" class="text-2xl text-gray-800 dark:text-gray-200 hover:text-blue-800 dark:hover:text-blue-400 transition-colors">
-                        <i class="fab fa-facebook"></i>
-                    </a>
-                    <a href="#" class="text-2xl text-gray-800 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 transition-colors">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+	<section id="contact" class="min-h-[calc(100vh-5rem)] px-4 lg:px-16 py-16 lg:py-24 relative z-10">
+		<div
+			class="absolute inset-0 bg-gradient-to-br from-purple-50/50 via-white/50 to-indigo-50/50 dark:from-dark-100/50 dark:via-dark-200/50 dark:to-dark-200/50">
+		</div>
+		<div class="max-w-4xl mx-auto relative">
+			<span class="text-indigo-600 font-semibold mb-2 block">GET IN TOUCH</span>
+			<h2 class="text-3xl font-bold mb-4">Let's Work Together</h2>
+			<p class="text-gray-600 dark:text-gray-300 mb-8">Have a project in mind? Let's talk about it.</p>
+			<div
+				class="bg-white/80 dark:bg-dark-200/80 p-8 rounded-2xl shadow-lg backdrop-blur-sm border border-gray-200/20 dark:border-white/10">
+				<p class="text-lg mb-2 text-gray-800 dark:text-gray-200">john.doe@example.com</p>
+				<p class="text-lg mb-8 text-gray-800 dark:text-gray-200">(+1) 555-123-4567</p>
+				<div class="space-x-6">
+					<a href="#"
+						class="text-2xl text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+						<i class="fab fa-linkedin"></i>
+					</a>
+					<a href="#"
+						class="text-2xl text-gray-800 dark:text-gray-200 hover:text-pink-600 dark:hover:text-pink-400 transition-colors">
+						<i class="fab fa-instagram"></i>
+					</a>
+					<a href="#"
+						class="text-2xl text-gray-800 dark:text-gray-200 hover:text-blue-800 dark:hover:text-blue-400 transition-colors">
+						<i class="fab fa-facebook"></i>
+					</a>
+					<a href="#"
+						class="text-2xl text-gray-800 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 transition-colors">
+						<i class="fab fa-github"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
 
-    <!-- Update the scroll behavior -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Smooth scroll for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    const headerOffset = 80; // Reduced from 96
-                    const elementPosition = target.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+	<!-- Update the scroll behavior -->
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			// Smooth scroll for anchor links
+			document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+				anchor.addEventListener('click', function (e) {
+					e.preventDefault();
+					const target = document.querySelector(this.getAttribute('href'));
+					const headerOffset = 80; // Reduced from 96
+					const elementPosition = target.getBoundingClientRect().top;
+					const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-                });
-            });
-        });
-    </script>
+					window.scrollTo({
+						top: offsetPosition,
+						behavior: 'smooth'
+					});
+				});
+			});
+		});
+	</script>
 
-    <!-- Add a footer section -->
-    <footer class="relative z-10 bg-white/80 dark:bg-dark-200/80 backdrop-blur-lg border-t border-gray-200/20 dark:border-white/10">
-        <div class="max-w-7xl mx-auto px-4 py-8">
-            <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                <div class="text-center md:text-left">
-                    <div class="text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-2">
-                        JOHN DOE
-                    </div>
-                    <p class="text-sm text-gray-600 dark:text-gray-400">
-                        Creative Developer & AI Enthusiast
-                    </p>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
-                        <i class="fab fa-github text-xl"></i>
-                    </a>
-                    <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
-                        <i class="fab fa-linkedin text-xl"></i>
-                    </a>
-                    <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
-                        <i class="fab fa-twitter text-xl"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="mt-8 text-center text-sm text-gray-600 dark:text-gray-400">
-                <p>© 2024 John Doe. All rights reserved.</p>
-                <p class="mt-2">Built with ❤️ using Tailwind CSS</p>
-            </div>
-        </div>
-    </footer>
+	<!-- Add a footer section -->
+	<footer
+		class="relative z-10 bg-white/80 dark:bg-dark-200/80 backdrop-blur-lg border-t border-gray-200/20 dark:border-white/10">
+		<div class="max-w-7xl mx-auto px-4 py-8">
+			<div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+				<div class="text-center md:text-left">
+					<div
+						class="text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-2">
+						JOHN DOE
+					</div>
+					<p class="text-sm text-gray-600 dark:text-gray-400">
+						Creative Developer & AI Enthusiast
+					</p>
+				</div>
+				<div class="flex items-center space-x-4">
+					<a href="#"
+						class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+						<i class="fab fa-github text-xl"></i>
+					</a>
+					<a href="#"
+						class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+						<i class="fab fa-linkedin text-xl"></i>
+					</a>
+					<a href="#"
+						class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+						<i class="fab fa-twitter text-xl"></i>
+					</a>
+				</div>
+			</div>
+			<div class="mt-8 text-center text-sm text-gray-600 dark:text-gray-400">
+				<p>© 2024 John Doe. All rights reserved.</p>
+				<p class="mt-2">Built with ❤️ using Tailwind CSS</p>
+			</div>
+		</div>
+	</footer>
 
-    <!-- Add mobile menu script -->
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-            menu.classList.toggle('flex');
-            menu.classList.toggle('flex-col');
-            menu.classList.toggle('w-full');
-        }
-    </script>
+	<!-- Add mobile menu script -->
+	<script>
+		function toggleMenu() {
+			const menu = document.getElementById('mobile-menu-dropdown');
+			menu.classList.toggle('hidden');
+		}
+
+		// Close menu when clicking outside
+		document.addEventListener('click', function(event) {
+			const menu = document.getElementById('mobile-menu-dropdown');
+			const menuButton = document.querySelector('[onclick="toggleMenu()"]');
+			if (!menu.contains(event.target) && !menuButton.contains(event.target) && !menu.classList.contains('hidden')) {
+				menu.classList.add('hidden');
+			}
+		});
+	</script>
 </body>
+
 </html>
