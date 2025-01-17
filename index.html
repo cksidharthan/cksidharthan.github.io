@@ -1,337 +1,729 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Sidharthan Chandrasekaran Kamaraj - Portfolio</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
-	<meta name="description" content="Portfolio website of Sidharthan Chandrasekaran Kamaraj" />
-	<meta name="keywords" content="Sidharthan, Chandrasekaran Kamaraj, Sid, Sidharthan portfolio, Sidharthan Chandrasekaran Kamaraj, Sid Portfolio" />
-	<meta name="author" content="Sidharthan Chandrasekaran Kamaraj" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Doe - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .blob-1 {
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            z-index: -1;
+            animation: float 6s ease-in-out infinite;
+        }
+        .blob-2 {
+            position: absolute;
+            bottom: -150px;
+            left: -150px;
+            z-index: -1;
+            animation: float 8s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        .grid-bg {
+            background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+        .timeline-line {
+            background: none;
+            height: 40px;
+            position: relative;
+            overflow: visible;
+        }
 
-	<link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+        .timeline-track {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, 
+                rgba(99, 102, 241, 0.1) 0%,
+                rgba(99, 102, 241, 0.3) 50%,
+                rgba(99, 102, 241, 0.1) 100%
+            );
+            transform: translateY(-50%);
+        }
 
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
+        .timeline-glow {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(90deg, 
+                transparent 0%,
+                #6366f1 50%,
+                transparent 100%
+            );
+            filter: blur(8px);
+            transform: translateY(-50%);
+            opacity: 0.3;
+            animation: glowPulse 3s infinite;
+        }
 
-	<!-- Theme style  -->
-	<link rel="stylesheet" href="css/style.css">
+        .timeline-particles {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            transform: translateY(-50%);
+        }
 
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #6366f1;
+            border-radius: 50%;
+            animation: particleFloat 8s infinite linear;
+        }
 
-	<script src="js/particle.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+        .particle::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 1px;
+            background: linear-gradient(90deg, #6366f1, transparent);
+            transform: translate(-50%, -50%);
+        }
 
-	</head>
-	<body>
+        @keyframes glowPulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.5; }
+        }
 
-	<div class="fh5co-loader"></div>
+        @keyframes particleFloat {
+            0% {
+                left: -5px;
+                opacity: 0;
+            }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% {
+                left: calc(100% + 5px);
+                opacity: 0;
+            }
+        }
 
-	<div id="page">
-	<header id="fh5co-header" class="fh5co-cover js-fullheight" style="height: 100vh;" role="banner" data-stellar-background-ratio="0.5">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center">
-					<div class="display-t js-fullheight">
-						<div class="display-tc js-fullheight animate-box mobile-padding" data-animate-effect="fadeIn">
-							<div class="profile-thumb" style="background: url(images/sidharthan_profile_pic.jpg);"></div>
-							<h1>Sidharthan Chandrasekaran Kamaraj</h1>
-							<h2 style="font-size: x-large;"><span>Go Developer at Reynen Court</span></h2>
-							<p>
-								<ul class="fh5co-social-icons">
-									<li><a href="https://www.linkedin.com/in/sidharthan-kamaraj/" target="_blank"><i class="icon-linkedin2"></i></a></li>
-									<li><a href="https://github.com/cksidharthan" target="_blank"><i class="icon-github2"></i></a></li>
-									<li><a href="https://medium.com/@csidharthank" target="_blank"><i class="icon-blog"></i></a></li>
-									<li><a href="https://twitter.com/imsidharthan" target="_blank"><i class="icon-twitter2"></i></a></li>
-									<li><a href="https://www.facebook.com/im.sidharthan" target="_blank"><i class="icon-facebook2"></i></a></li>
-								</ul>
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
-	</div>
+        .experience-icon {
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 24px;
+            height: 24px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6366f1;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
 
-	<div id="fh5co-about">
-		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>About Me</h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-5" style="padding: 3%">
-                    <img class="about-me-image" src="images/sidharthan.jpg"></img>
-				</div>
-				<div class="col-md-7" style="padding: 2% 5%; text-align: justify;">
-					<h2>Hello There!</h2>
-					<p>I’m Sidharthan, yet another Software Developer trying to learn new things everyday :)</p>
-					<p>To be precise, all my life I’ve been interested in computers and programming and when the time came to work as a developer at BNY Mellon, I grabbed it and started my professional career as a Developer.
-						Over the years of my professional career, I've worked on developing a lot of applications in different domains which helped me to upskill myself on the programming best practices. I've been gifted to be mentored
-						by Senior Engineers who helped me build my progrmamming knowledge. 
-						I have a Masters degree in Business Analytics that I studied to explore the area of Business and Data Analytics.
-						I returned back to work as a Developer at NGINX to continue my Developer career.</p>
-						<p>I’m a big fan of open-source projects and a Linux fanatic and I love watching motorsport racing especially Formula 1.</p>
-					<p>
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
+        .timeline-line::before,
+        .timeline-line::after {
+            content: none;
+        }
 
-	<div id="fh5co-resume" class="fh5co-bg-color">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 col-md-offset-0">
-					<ul class="timeline">
-						<li class="timeline-heading text-center animate-box">
-							<div><h3>Work Experience</h3></div>
-						</li>
-						<li class="animate-box timeline-unverted">
-							<div class="timeline-badge"><i class="icon-suitcase"></i></div>
-							<div class="timeline-panel">
-								<div class="timeline-heading">
-									<h3 class="timeline-title">Software Engineer</h3>
-									<span class="company">Reynen Court - Feb 2022 - Present</span>
-								</div>
-								<div class="timeline-body">
-								</div>
-							</div>
-						</li>
-						<li class="animate-box timeline-inverted">
-							<div class="timeline-badge"><i class="icon-suitcase"></i></div>
-							<div class="timeline-panel">
-								<div class="timeline-heading">
-									<h3 class="timeline-title">Software Engineer II</h3>
-									<span class="company">NGINX Inc - Part of F5 - Dec 2020 - Dec 2021</span>
-								</div>
-								<div class="timeline-body">
-								</div>
-							</div>
-						</li>
-						<li class="animate-box timeline-unverted">
-							<div class="timeline-badge"><i class="icon-suitcase"></i></div>
-							<div class="timeline-panel">
-								<div class="timeline-heading">
-									<h3 class="timeline-title">Senior Application Developer</h3>
-									<span class="company">The Bank of New York Mellon - Dec 2018 – Aug 2019</span>
-								</div>
-								<div class="timeline-body">
-								</div>
-							</div>
-						</li>
-						<li class="timeline-inverted animate-box">
-							<div class="timeline-badge"><i class="icon-suitcase"></i></div>
-							<div class="timeline-panel">
-								<div class="timeline-heading">
-									<h3 class="timeline-title">Application Developer</h3>
-									<span class="company">The Bank of New York Mellon - Jul 2016 – Nov 2018</span>
-								</div>
-								<div class="timeline-body">
-								</div>
-							</div>
-						</li>
-						<li class="animate-box timeline-unverted">
-							<div class="timeline-badge"><i class="icon-suitcase"></i></div>
-							<div class="timeline-panel">
-								<div class="timeline-heading">
-									<h3 class="timeline-title">Intern</h3>
-									<span class="company">The Bank of New York Mellon - Feb 2016 – Jul 2016</span>
-								</div>
-								<div class="timeline-body">
-								</div>
-							</div>
-						</li>
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(var(--rotate, 0)); }
+            50% { transform: translateY(-20px) rotate(var(--rotate, 0)); }
+        }
 
-						<br>
-						<li class="timeline-heading text-center animate-box">
-							<div><h3>Education</h3></div>
-						</li>
-						<li class="timeline-inverted animate-box">
-							<div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
-							<div class="timeline-panel">
-								<div class="timeline-heading">
-									<h3 class="timeline-title">Masters Degree</h3>
-									<span class="company">University College Cork - 2019 - 2020</span>
-								</div>
-								<div class="timeline-body">
-									<p>MSc. Business Information and Analytical Systems</p>
-									<p>First Class Honours</p>
-								</div>
-							</div>
-						</li>
-						<li class="animate-box timeline-unverted">
-							<div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
-							<div class="timeline-panel">
-								<div class="timeline-heading">
-									<h3 class="timeline-title">Bachelors Degree</h3>
-									<span class="company">Sri Sairam Institute of Technology - 2012 - 2016</span>
-								</div>
-								<div class="timeline-body">
-									<p>B.E. Electrical and Electronics Engineering</p>
-									<p>First Class with Distinction</p>
-								</div>
-							</div>
-						</li>
-			    	</ul>
-				</div>
-			</div>
-		</div>
-	</div>
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
 
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
 
-	<div id="fh5co-features" class="animate-box">
-		<div class="container">
-			<div class="services-padding">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-						<h2>Expertise</h2>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-4 text-center" style="text-align: center;">
-						<div class="feature-left">
-							<span class="icon">
-								<i class="icon-hourglass"></i>
-							</span>
-							<div class="feature-copy">
-								<h3>Business and Data Analysis</h3>
-								<p>Analyse complex business data and then derive insights from it.</p>
-							</div>
-						</div>
-					</div>
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: {
+                            50: '#171717',
+                            100: '#1F1F1F',
+                            200: '#262626',
+                            300: '#2E2E2E',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script>
+        // Check system dark mode preference
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark')
+        }
 
-					<div class="col-md-4 text-center" style="text-align: center;">
-						<div class="feature-left">
-							<span class="icon">
-								<i class="icon-browser"></i>
-							</span>
-							<div class="feature-copy">
-								<h3>Full Stack Application Development</h3>
-								<p>Develop Interactive Web Applications</p>
-							</div>
-						</div>
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark')
+        }
+    </script>
+    <script>
+        // Add modal functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const modals = {};
+            const projects = [
+                {
+                    id: 1,
+                    title: "Project One",
+                    category: "Web Development",
+                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Features include responsive design, modern UI components, and seamless user experience.",
+                    technologies: ["React", "Node.js", "MongoDB"],
+                    liveLink: "https://project1.com",
+                    githubLink: "https://github.com/username/project1",
+                    image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800"
+                },
+                {
+                    id: 2,
+                    title: "Project Two",
+                    category: "UI/UX Design",
+                    description: "A comprehensive UI/UX design project focusing on user experience and interface design. Created wireframes, prototypes, and final designs for a mobile application.",
+                    technologies: ["Figma", "Adobe XD", "Sketch"],
+                    liveLink: "https://project2.com",
+                    githubLink: "https://github.com/username/project2",
+                    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800"
+                },
+                {
+                    id: 3,
+                    title: "Project Three",
+                    category: "Mobile App",
+                    description: "Mobile application development project using React Native. Features include real-time updates, offline functionality, and seamless synchronization.",
+                    technologies: ["React Native", "Firebase", "Redux"],
+                    liveLink: "https://project3.com",
+                    githubLink: "https://github.com/username/project3",
+                    image: "https://images.unsplash.com/photo-1555421689-d68471e189f2?w=800"
+                },
+                {
+                    id: 4,
+                    title: "Project Four",
+                    category: "E-commerce",
+                    description: "Full-stack e-commerce platform with features like product management, cart functionality, payment integration, and order tracking.",
+                    technologies: ["Next.js", "Stripe", "PostgreSQL"],
+                    liveLink: "https://project4.com",
+                    githubLink: "https://github.com/username/project4",
+                    image: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=800"
+                },
+                {
+                    id: 5,
+                    title: "Project Five",
+                    category: "Brand Design",
+                    description: "Complete brand identity design including logo, color palette, typography, and brand guidelines for a tech startup.",
+                    technologies: ["Illustrator", "Photoshop", "InDesign"],
+                    liveLink: "https://project5.com",
+                    githubLink: "https://github.com/username/project5",
+                    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800"
+                },
+                {
+                    id: 6,
+                    title: "Project Six",
+                    category: "Web Application",
+                    description: "Modern web application built with Vue.js and Firebase. Features include authentication, real-time database, and cloud functions.",
+                    technologies: ["Vue.js", "Firebase", "Tailwind CSS"],
+                    liveLink: "https://project6.com",
+                    githubLink: "https://github.com/username/project6",
+                    image: "https://images.unsplash.com/photo-1559028012-481c04fa702d?w=800"
+                }
+            ];
 
-					</div>
-					<div class="col-md-4 text-center" style="text-align: center;">
-						<div class="feature-left">
-							<span class="icon">
-								<i class="icon-lightbulb"></i>
-							</span>
-							<div class="feature-copy">
-								<h3>Consulting</h3>
-								<p>Give suggestion on Business analysis, software development etc,.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+            // Create modals for each project
+            projects.forEach(project => {
+                const modalHTML = `
+                    <div id="modal-${project.id}" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+                        <div class="min-h-screen px-4 text-center">
+                            <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+                                <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+                            </div>
+                            <span class="inline-block h-screen align-middle">​</span>
+                            <div class="inline-block w-full max-w-3xl p-6 my-8 text-left align-middle transition-all transform bg-white dark:bg-dark-200 shadow-xl rounded-2xl">
+                                <div class="flex justify-between items-start">
+                                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white">${project.title}</h3>
+                                    <button class="modal-close text-gray-400 hover:text-gray-500 dark:text-gray-500 dark:hover:text-gray-400">
+                                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="mt-4">
+                                    <img src="${project.image}" alt="${project.title}" class="w-full h-64 object-cover rounded-lg mb-4">
+                                    <p class="text-sm text-indigo-600 dark:text-indigo-400 font-semibold">${project.category}</p>
+                                    <p class="mt-2 text-gray-600 dark:text-gray-300">${project.description}</p>
+                                    <div class="mt-4">
+                                        <h4 class="font-semibold mb-2">Technologies Used:</h4>
+                                        <div class="flex flex-wrap gap-2">
+                                            ${project.technologies.map(tech => 
+                                                `<span class="px-3 py-1 bg-gray-100 rounded-full text-sm">${tech}</span>`
+                                            ).join('')}
+                                        </div>
+                                    </div>
+                                    <div class="mt-6 flex gap-4">
+                                        <a href="${project.liveLink}" target="_blank" 
+                                           class="inline-flex items-center px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors">
+                                            <i class="fas fa-external-link-alt mr-2"></i> View Live
+                                        </a>
+                                        <a href="${project.githubLink}" target="_blank"
+                                           class="inline-flex items-center px-4 py-2 border-2 border-gray-800 text-gray-800 rounded-lg hover:bg-gray-100 transition-colors">
+                                            <i class="fab fa-github mr-2"></i> View Code
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                document.body.insertAdjacentHTML('beforeend', modalHTML);
+                modals[project.id] = document.getElementById(`modal-${project.id}`);
+            });
 
-	<div id="fh5co-skills" class="animate-box">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>Skills</h2>
-				</div>
-			</div>
-			<div class="my-container">
-				<div class="my-button">Golang</div>
-				<div class="my-button">Python</div>
-				<div class="my-button">R Programming</div>
-				<div class="my-button">SQL</div>
-				<div class="my-button">Machine Learning</div>
-				<div class="my-button">AWS</div>
-				<div class="my-button">Docker</div>
-				<div class="my-button">Java</div>
-				<div class="my-button">Data Analysis</div>
-				<div class="my-button">Tableau</div>
-				<div class="my-button">Angular</div>
-				<div class="my-button">Git</div>
-				<div class="my-button">Javascript</div>
-				<div class="my-button">Balsamiq</div>
-				<div class="my-button">Visio</div>
-				<div class="my-button">Linux</div>
-			</div>
-			<div style="text-align: center; padding-top: 2%;">
-				<h4>and many more <span style='font-size:20px;'>&#128578;</span></h4>
-			</div>
-		</div>
-	</div>
+            // Add click handlers to project cards
+            document.querySelectorAll('.project-card').forEach((card, index) => {
+                card.addEventListener('click', () => {
+                    modals[index + 1].classList.remove('hidden');
+                });
+            });
 
-	<div id="fh5co-work" class="fh5co-bg-dark">
-		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>Projects</h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-3 text-center col-padding animate-box">
-					<a href="https://github.com/cksidharthan/twitter-sentiment-analysis" class="work" style="background-image: url(images/twitter_sentiment.jpg);" target="_blank">
-						<div class="desc">
-							<h3>Twitter Sentiment Analysis</h3>
-							<span>R, Text mining and Analytics</span>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-3 text-center col-padding animate-box">
-					<a href="https://cksidharthan.github.io/twitter-sentiment-webapp/" class="work" style="background-image: url(images/hashtag.png);" target="_blank">
-						<div class="desc">
-							<h3>Hashtag Health</h3>
-							<span>Python, Django, Twitter, Text Mining, Analytics</span>
-						</div>
-					</a>
-				</div>
-			</div>  
-		</div>
-	</div>
+            // Add click handlers to close buttons
+            document.querySelectorAll('.modal-close').forEach(button => {
+                button.addEventListener('click', () => {
+                    button.closest('[id^="modal-"]').classList.add('hidden');
+                });
+            });
 
-	<div id="fh5co-blog">
-		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>Hire Me!</h2>
-					<p style="color: black;">
-                    If you have an application that needs to be built, a problem that needs to be solved or a question to be answered, I would love to help you with it. Just drop me a mail and I will revert back to you at the earliest :)</p>
-					<p><a href="mailto:csidharthank@gmail.com"  target="_blank" class="contact-btn">Contact</a></p>
-				</div>
-			</div>
-		</div>
-	</div>
+            // Close modal when clicking outside
+            window.addEventListener('click', (e) => {
+                if (e.target.matches('[id^="modal-"]')) {
+                    e.target.classList.add('hidden');
+                }
+            });
+        });
 
-	<div id="fh5co-footer" class="fh5co-bg-dark">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<p style="color: white; text-align: center;">Sidharthan Chandrasekaran Kamaraj - Portfolio Website</p>
-				</div>
-			</div>
-		</div>
-	</div>
+        // Generate floating particles
+        function createParticles() {
+            const container = document.querySelector('.timeline-particles');
+            for (let i = 0; i < 5; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.animationDelay = `${i * 1.5}s`;
+                particle.style.top = `${Math.random() * 20 - 10}px`;
+                container.appendChild(particle);
+            }
+        }
 
-	<div class="gototop js-top">
-		<a href="#" class="js-gotop"><i class="icon-arrow-up22"></i></a>
-	</div>
-	
+        // Call when DOM is loaded
+        document.addEventListener('DOMContentLoaded', createParticles);
+    </script>
+</head>
+<body class="bg-gradient-to-br from-indigo-50/50 via-white to-purple-50/50 dark:from-dark-50 dark:via-dark-100 dark:to-dark-200 text-gray-800 dark:text-gray-100 font-inter leading-relaxed overflow-x-hidden transition-all duration-300">
+    <!-- Background Elements -->
+    <div class="fixed inset-0 grid-bg opacity-30 z-0"></div>
+    
+    <header class="fixed top-0 left-0 right-0 p-4 z-50 bg-gradient-to-b from-white/80 via-white/70 to-white/50 dark:from-dark-50/90 dark:via-dark-50/80 dark:to-dark-50/50 backdrop-blur-lg border-b border-gray-200/20 dark:border-white/10">
+        <div class="max-w-7xl mx-auto">
+            <div class="px-6 py-2 flex justify-between items-center"> <!-- Reduced padding -->
+                <div class="text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                    JOHN DOE
+                </div>
+                <nav class="flex items-center gap-3"> <!-- Reduced gap -->
+                    <a href="#home" class="px-3 py-1.5 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Home</a>
+                    <a href="#about" class="px-3 py-1.5 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">About</a>
+                    <a href="#works" class="px-3 py-1.5 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Works</a>
+                    <a href="#contact" class="px-4 py-1.5 bg-indigo-600 dark:bg-indigo-500 text-white rounded-lg hover:bg-indigo-700 dark:hover:bg-indigo-600 transition-all transform hover:scale-105 shadow-sm hover:shadow-indigo-200/20">Contact</a>
+                    <button onclick="toggleDarkMode()" class="p-1.5 px-3 rounded-lg bg-gray-100 dark:bg-dark-300 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-dark-200 transition-colors border border-gray-200/20 dark:border-white/10">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:inline"></i>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
 
-	<script src="js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<!-- Stellar Parallax -->
-	<script src="js/main.js"></script>
-	</body>
+    <!-- Add this script for navbar scroll effect -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.querySelector('header');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('shadow-md');
+                } else {
+                    header.classList.remove('shadow-md');
+                }
+            });
+        });
+    </script>
+
+    <section id="home" class="min-h-screen relative z-10 overflow-hidden pt-20">
+        <div class="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-dark-50 dark:via-dark-100 dark:to-dark-200"></div>
+        
+        <!-- Decorative elements -->
+        <div class="absolute inset-0">
+            <div class="absolute top-20 left-10 w-32 h-32 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+            <div class="absolute top-40 right-10 w-32 h-32 bg-indigo-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+            <div class="absolute -bottom-8 left-20 w-32 h-32 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto h-[calc(100vh-5rem)] px-8 flex items-center justify-between relative">
+            <!-- Content -->
+            <div class="max-w-2xl">
+                <div class="inline-block px-4 py-2 bg-white/50 dark:bg-dark-200/50 backdrop-blur-sm rounded-full mb-4 shadow-sm border border-gray-200/20 dark:border-white/10">
+                    <span class="text-indigo-600 dark:text-indigo-400 font-semibold">👋 WELCOME TO MY PORTFOLIO</span>
+                </div>
+                <h1 class="text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">
+                    Creative Developer & AI Enthusiast
+                </h1>
+                <p class="text-xl mb-8 text-gray-600 dark:text-gray-200 leading-relaxed">
+                    Crafting digital experiences where innovation meets design. Specializing in modern web development, AI integration, and creating seamless user experiences that leave a lasting impression.
+                </p>
+                <div class="flex gap-4 mb-8">
+                    <a href="#about" class="inline-flex items-center px-8 py-4 bg-indigo-600 text-white rounded-2xl hover:bg-indigo-700 transition-all transform hover:scale-105 shadow-lg hover:shadow-indigo-200">
+                        <span>MORE ABOUT ME</span>
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                    </a>
+                    <a href="#works" class="inline-flex items-center px-8 py-4 border-2 border-indigo-600 text-indigo-600 rounded-2xl hover:bg-indigo-50 transition-all transform hover:scale-105">
+                        VIEW WORKS
+                    </a>
+                </div>
+                <div class="flex items-center gap-4 text-gray-600 dark:text-gray-400">
+                    <div class="flex -space-x-2">
+                        <div class="w-10 h-10 rounded-full bg-indigo-100 dark:bg-dark-300 flex items-center justify-center">
+                            <i class="fab fa-react text-indigo-600 dark:text-indigo-400"></i>
+                        </div>
+                        <div class="w-10 h-10 rounded-full bg-purple-100 dark:bg-dark-300 flex items-center justify-center">
+                            <i class="fab fa-js text-purple-600 dark:text-purple-400"></i>
+                        </div>
+                        <div class="w-10 h-10 rounded-full bg-blue-100 dark:bg-dark-300 flex items-center justify-center">
+                            <i class="fab fa-python text-blue-600 dark:text-blue-400"></i>
+                        </div>
+                    </div>
+                    <span class="text-sm">Tech Stack</span>
+                </div>
+            </div>
+
+            <!-- AI Avatar -->
+            <div class="relative hidden lg:block">
+                <div class="absolute -top-20 -right-20 w-96 h-96 bg-gradient-to-br from-indigo-200 to-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-70"></div>
+                <div class="relative">
+                    <div class="w-[450px] h-[450px] rounded-full bg-gradient-to-br from-indigo-100 to-purple-100 flex items-center justify-center p-4">
+                        <img src="https://cdn.midjourney.com/c7643c97-0c75-4cbc-9a6d-9f0aa76b3c8c/0_0.png" 
+                             alt="AI Avatar" 
+                             class="w-full h-full object-cover rounded-full shadow-2xl"
+                             style="clip-path: circle(50% at 50% 50%);">
+                    </div>
+                    <!-- Floating elements -->
+                    <div class="absolute top-10 right-0 w-20 h-20 bg-white rounded-2xl shadow-lg flex items-center justify-center rotate-12 animate-float">
+                        <i class="fas fa-brain text-3xl text-indigo-600"></i>
+                    </div>
+                    <div class="absolute bottom-10 left-0 w-20 h-20 bg-white rounded-2xl shadow-lg flex items-center justify-center -rotate-12 animate-float animation-delay-2000">
+                        <i class="fas fa-code text-3xl text-purple-600"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#about" class="text-gray-400 hover:text-gray-600 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <section id="about" class="min-h-screen px-16 py-24 relative z-10">
+        <div class="absolute inset-0 bg-gradient-to-br from-white/50 via-transparent to-indigo-50/30 dark:from-dark-100/50 dark:via-transparent dark:to-dark-200/30"></div>
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-full h-full bg-indigo-100 rounded-2xl"></div>
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format&fit=crop&q=60" 
+                         alt="Profile Picture" 
+                         class="relative z-10 w-full h-[500px] object-cover rounded-2xl shadow-lg">
+                </div>
+                <div>
+                    <span class="text-indigo-600 font-semibold mb-2 block">ABOUT ME</span>
+                    <h2 class="text-4xl font-bold mb-6">Crafting Digital Experiences with Passion</h2>
+                    <p class="text-gray-600 dark:text-gray-200 mb-6">
+                        Hello! I'm a passionate developer with a keen eye for design and a love for creating seamless user experiences. 
+                        With expertise in front-end development and UI/UX design, I transform ideas into engaging digital solutions.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="p-4 bg-white dark:bg-dark-200 rounded-lg shadow-sm">
+                            <h3 class="font-bold mb-2 dark:text-white">Frontend Development</h3>
+                            <p class="text-gray-600 dark:text-gray-300">React, Vue, Angular</p>
+                        </div>
+                        <div class="p-4 bg-white dark:bg-dark-200 rounded-lg shadow-sm">
+                            <h3 class="font-bold mb-2 dark:text-white">UI/UX Design</h3>
+                            <p class="text-gray-600 dark:text-gray-300">Figma, Adobe XD</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative">
+                <span class="text-indigo-600 font-semibold mb-2 block">MY JOURNEY</span>
+                <h2 class="text-3xl font-bold mb-12">Education & Experience</h2>
+                
+                <!-- Horizontal Timeline -->
+                <div class="relative">
+                    <!-- Timeline Line -->
+                    <div class="absolute top-[50px] left-0 right-0">
+                        <div class="timeline-line mx-12">
+                            <div class="timeline-track"></div>
+                            <div class="timeline-glow"></div>
+                            <div class="timeline-particles">
+                                <!-- Generate particles dynamically with JavaScript -->
+                            </div>
+                            <svg viewBox="0 0 1200 40" preserveAspectRatio="none" class="absolute top-0 left-0 w-full h-full">
+                                <path d="M0,20 Q300,5 600,20 T1200,20" 
+                                      stroke="url(#gradient)" 
+                                      stroke-width="1.5" 
+                                      fill="none" 
+                                      vector-effect="non-scaling-stroke"
+                                      stroke-dasharray="5,5" />
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Items Container -->
+                    <div class="flex justify-between relative px-12">
+                        <!-- Timeline Item 1 -->
+                        <div class="relative group">
+                            <div class="flex flex-col items-center">
+                                <div class="experience-icon">
+                                    <i class="fas fa-briefcase"></i>
+                                </div>
+                                <!-- Year and Logo -->
+                                <div class="w-24 h-24 bg-white rounded-full shadow-lg flex items-center justify-center mb-4 z-10">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2048px-Google_%22G%22_Logo.svg.png" 
+                                         alt="Tech Solutions Logo" 
+                                         class="w-12 h-12 object-contain">
+                                </div>
+                                <span class="text-indigo-600 font-semibold">2022 - Present</span>
+                                
+                                <!-- Hover Card -->
+                                <div class="absolute top-32 left-1/2 -translate-x-1/2 w-64 bg-white dark:bg-dark-200 p-4 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-200/20 dark:border-white/10">
+                                    <h3 class="font-bold text-lg mb-2 text-gray-800 dark:text-white">Tech Solutions Inc.</h3>
+                                    <h4 class="text-indigo-600 dark:text-indigo-400 font-semibold mb-2">Senior Frontend Developer</h4>
+                                    <p class="text-sm text-gray-600 dark:text-gray-300">Leading frontend development team in creating responsive web applications.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 2 -->
+                        <div class="relative group">
+                            <div class="flex flex-col items-center">
+                                <div class="experience-icon">
+                                    <i class="fas fa-briefcase"></i>
+                                </div>
+                                <div class="w-24 h-24 bg-white rounded-full shadow-lg flex items-center justify-center mb-4 z-10">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png" 
+                                         alt="Digital Creatives Logo" 
+                                         class="w-12 h-12 object-contain">
+                                </div>
+                                <span class="text-indigo-600 font-semibold">2019 - 2022</span>
+                                
+                                <div class="absolute top-32 left-1/2 -translate-x-1/2 w-64 bg-white dark:bg-dark-200 p-4 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-200/20 dark:border-white/10">
+                                    <h3 class="font-bold text-lg mb-2 text-gray-800 dark:text-white">Digital Creatives Co.</h3>
+                                    <h4 class="text-indigo-600 dark:text-indigo-400 font-semibold mb-2">Frontend Developer</h4>
+                                    <p class="text-sm text-gray-600 dark:text-gray-300">Developed and maintained client websites and web applications.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 3 -->
+                        <div class="relative group">
+                            <div class="flex flex-col items-center">
+                                <div class="experience-icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div class="w-24 h-24 bg-white rounded-full shadow-lg flex items-center justify-center mb-4 z-10">
+                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/29/Harvard_shield_wreath.svg/1200px-Harvard_shield_wreath.svg.png" 
+                                         alt="University Logo" 
+                                         class="w-12 h-12 object-contain">
+                                </div>
+                                <span class="text-indigo-600 font-semibold">2015 - 2019</span>
+                                
+                                <div class="absolute top-32 left-1/2 -translate-x-1/2 w-64 bg-white dark:bg-dark-200 p-4 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-200/20 dark:border-white/10">
+                                    <h3 class="font-bold text-lg mb-2 text-gray-800 dark:text-white">University of Technology</h3>
+                                    <h4 class="text-indigo-600 dark:text-indigo-400 font-semibold mb-2">Bachelor of Computer Science</h4>
+                                    <p class="text-sm text-gray-600 dark:text-gray-300">Major in Software Engineering with focus on Web Technologies.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="works" class="min-h-screen px-16 py-24 relative z-10">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-white/50 to-purple-50/30 dark:via-dark-100/50 dark:to-dark-200/30"></div>
+        <h2 class="text-3xl font-bold text-center mb-4">PORTFOLIO</h2>
+        <p class="text-gray-600 dark:text-gray-300 text-center mb-12 max-w-2xl mx-auto">
+            Check out some of my latest projects and creative works that showcase my skills and expertise.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card cursor-pointer">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800" 
+                         alt="Project 1" 
+                         class="w-full h-[300px] object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-b from-black/80 to-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
+                        <div class="text-white text-center p-4">
+                            <h3 class="text-xl font-bold mb-2">Project One</h3>
+                            <p class="text-gray-200">Web Development</p>
+                            <p class="mt-2 text-sm text-gray-300">Click to view details</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card cursor-pointer">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800" 
+                         alt="Project 2" 
+                         class="w-full h-[300px] object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-b from-black/80 to-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
+                        <div class="text-white text-center p-4">
+                            <h3 class="text-xl font-bold mb-2">Project Two</h3>
+                            <p class="text-gray-200">UI/UX Design</p>
+                            <p class="mt-2 text-sm text-gray-300">Click to view details</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card cursor-pointer">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1555421689-d68471e189f2?w=800" 
+                         alt="Project 3" 
+                         class="w-full h-[300px] object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-b from-black/80 to-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
+                        <div class="text-white text-center p-4">
+                            <h3 class="text-xl font-bold mb-2">Project Three</h3>
+                            <p class="text-gray-200">Mobile App</p>
+                            <p class="mt-2 text-sm text-gray-300">Click to view details</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card cursor-pointer">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=800" 
+                         alt="Project 4" 
+                         class="w-full h-[300px] object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-b from-black/80 to-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
+                        <div class="text-white text-center p-4">
+                            <h3 class="text-xl font-bold mb-2">Project Four</h3>
+                            <p class="text-gray-200">E-commerce</p>
+                            <p class="mt-2 text-sm text-gray-300">Click to view details</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card cursor-pointer">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800" 
+                         alt="Project 5" 
+                         class="w-full h-[300px] object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-b from-black/80 to-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
+                        <div class="text-white text-center p-4">
+                            <h3 class="text-xl font-bold mb-2">Project Five</h3>
+                            <p class="text-gray-200">Brand Design</p>
+                            <p class="mt-2 text-sm text-gray-300">Click to view details</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card cursor-pointer">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?w=800" 
+                         alt="Project 6" 
+                         class="w-full h-[300px] object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-b from-black/80 to-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
+                        <div class="text-white text-center p-4">
+                            <h3 class="text-xl font-bold mb-2">Project Six</h3>
+                            <p class="text-gray-200">Web Application</p>
+                            <p class="mt-2 text-sm text-gray-300">Click to view details</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="min-h-[calc(100vh-5rem)] px-16 py-24 relative z-10">
+        <div class="absolute inset-0 bg-gradient-to-br from-purple-50/50 via-white/50 to-indigo-50/50 dark:from-dark-100/50 dark:via-dark-200/50 dark:to-dark-200/50"></div>
+        <div class="max-w-4xl mx-auto relative">
+            <span class="text-indigo-600 font-semibold mb-2 block">GET IN TOUCH</span>
+            <h2 class="text-3xl font-bold mb-4">Let's Work Together</h2>
+            <p class="text-gray-600 dark:text-gray-300 mb-8">Have a project in mind? Let's talk about it.</p>
+            <div class="bg-white/80 dark:bg-dark-200/80 p-8 rounded-2xl shadow-lg backdrop-blur-sm border border-gray-200/20 dark:border-white/10">
+                <p class="text-lg mb-2 text-gray-800 dark:text-gray-200">john.doe@example.com</p>
+                <p class="text-lg mb-8 text-gray-800 dark:text-gray-200">(+1) 555-123-4567</p>
+                <div class="space-x-6">
+                    <a href="#" class="text-2xl text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="text-2xl text-gray-800 dark:text-gray-200 hover:text-pink-600 dark:hover:text-pink-400 transition-colors">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-2xl text-gray-800 dark:text-gray-200 hover:text-blue-800 dark:hover:text-blue-400 transition-colors">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" class="text-2xl text-gray-800 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 transition-colors">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Update the scroll behavior -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    const headerOffset = 80; // Reduced from 96
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
 </html>
