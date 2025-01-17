@@ -254,40 +254,49 @@
             // Create modals for each project
             projects.forEach(project => {
                 const modalHTML = `
-                    <div id="modal-${project.id}" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+                    <div id="modal-${project.id}" class="fixed inset-0 bg-black/50 dark:bg-black/70 z-50 hidden backdrop-blur-sm">
                         <div class="min-h-screen px-4 text-center">
                             <div class="fixed inset-0 transition-opacity" aria-hidden="true">
-                                <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+                                <div class="absolute inset-0 bg-gray-500/75 dark:bg-gray-900/90"></div>
                             </div>
                             <span class="inline-block h-screen align-middle">​</span>
-                            <div class="inline-block w-full max-w-3xl p-6 my-8 text-left align-middle transition-all transform bg-white dark:bg-dark-200 shadow-xl rounded-2xl">
-                                <div class="flex justify-between items-start">
+                            <div class="inline-block w-full max-w-3xl p-6 my-8 text-left align-middle transition-all transform bg-white dark:bg-dark-200 shadow-xl rounded-2xl border border-gray-200/20 dark:border-white/10">
+                                <div class="flex justify-between items-start mb-4">
                                     <h3 class="text-2xl font-bold text-gray-900 dark:text-white">${project.title}</h3>
-                                    <button class="modal-close text-gray-400 hover:text-gray-500 dark:text-gray-500 dark:hover:text-gray-400">
+                                    <button class="modal-close text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 transition-colors">
                                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                                         </svg>
                                     </button>
                                 </div>
-                                <div class="mt-4">
-                                    <img src="${project.image}" alt="${project.title}" class="w-full h-64 object-cover rounded-lg mb-4">
-                                    <p class="text-sm text-indigo-600 dark:text-indigo-400 font-semibold">${project.category}</p>
-                                    <p class="mt-2 text-gray-600 dark:text-gray-300">${project.description}</p>
-                                    <div class="mt-4">
-                                        <h4 class="font-semibold mb-2">Technologies Used:</h4>
+                                <div class="space-y-4">
+                                    <div class="relative h-64 rounded-lg overflow-hidden">
+                                        <img src="${project.image}" alt="${project.title}" class="w-full h-full object-cover">
+                                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <span class="px-3 py-1 text-sm font-semibold text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-900/30 rounded-full">
+                                            ${project.category}
+                                        </span>
+                                    </div>
+                                    <p class="text-gray-600 dark:text-gray-300">${project.description}</p>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Technologies Used:</h4>
                                         <div class="flex flex-wrap gap-2">
                                             ${project.technologies.map(tech => 
-                                                `<span class="px-3 py-1 bg-gray-100 rounded-full text-sm">${tech}</span>`
+                                                `<span class="px-3 py-1 text-sm text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-dark-300 rounded-full">
+                                                    ${tech}
+                                                </span>`
                                             ).join('')}
                                         </div>
                                     </div>
-                                    <div class="mt-6 flex gap-4">
+                                    <div class="flex gap-4 pt-4 border-t border-gray-200 dark:border-gray-700">
                                         <a href="${project.liveLink}" target="_blank" 
-                                           class="inline-flex items-center px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors">
+                                           class="inline-flex items-center px-4 py-2 bg-indigo-600 dark:bg-indigo-500 text-white rounded-lg hover:bg-indigo-700 dark:hover:bg-indigo-600 transition-colors">
                                             <i class="fas fa-external-link-alt mr-2"></i> View Live
                                         </a>
                                         <a href="${project.githubLink}" target="_blank"
-                                           class="inline-flex items-center px-4 py-2 border-2 border-gray-800 text-gray-800 rounded-lg hover:bg-gray-100 transition-colors">
+                                           class="inline-flex items-center px-4 py-2 border-2 border-gray-800 dark:border-gray-600 text-gray-800 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-dark-300 transition-colors">
                                             <i class="fab fa-github mr-2"></i> View Code
                                         </a>
                                     </div>
@@ -344,16 +353,21 @@
     
     <header class="fixed top-0 left-0 right-0 p-4 z-50 bg-gradient-to-b from-white/80 via-white/70 to-white/50 dark:from-dark-50/90 dark:via-dark-50/80 dark:to-dark-50/50 backdrop-blur-lg border-b border-gray-200/20 dark:border-white/10">
         <div class="max-w-7xl mx-auto">
-            <div class="px-6 py-2 flex justify-between items-center"> <!-- Reduced padding -->
-                <div class="text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                    JOHN DOE
+            <div class="px-4 py-2 flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-0">
+                <div class="flex items-center justify-between">
+                    <div class="text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                        SIDHARTHAN C KAMARAJ
+                    </div>
+                    <button class="md:hidden text-gray-600 dark:text-gray-300" onclick="toggleMenu()">
+                        <i class="fas fa-bars"></i>
+                    </button>
                 </div>
-                <nav class="flex items-center gap-3"> <!-- Reduced gap -->
+                <nav class="hidden md:flex items-center gap-3" id="mobile-menu">
                     <a href="#home" class="px-3 py-1.5 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Home</a>
                     <a href="#about" class="px-3 py-1.5 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">About</a>
                     <a href="#works" class="px-3 py-1.5 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Works</a>
                     <a href="#contact" class="px-4 py-1.5 bg-indigo-600 dark:bg-indigo-500 text-white rounded-lg hover:bg-indigo-700 dark:hover:bg-indigo-600 transition-all transform hover:scale-105 shadow-sm hover:shadow-indigo-200/20">Contact</a>
-                    <button onclick="toggleDarkMode()" class="p-1.5 px-3 rounded-lg bg-gray-100 dark:bg-dark-300 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-dark-200 transition-colors border border-gray-200/20 dark:border-white/10">
+                    <button onclick="toggleDarkMode()" class="p-1.5 px-3 ml-2 rounded-lg bg-gray-100 dark:bg-dark-300 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-dark-200 transition-colors border border-gray-200/20 dark:border-white/10">
                         <i class="fas fa-moon dark:hidden"></i>
                         <i class="fas fa-sun hidden dark:inline"></i>
                     </button>
@@ -387,17 +401,17 @@
             <div class="absolute -bottom-8 left-20 w-32 h-32 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
         </div>
 
-        <div class="max-w-7xl mx-auto h-[calc(100vh-5rem)] px-8 flex items-center justify-between relative">
+        <div class="max-w-7xl mx-auto h-[calc(100vh-5rem)] px-8 flex flex-col lg:flex-row items-center justify-between relative">
             <!-- Content -->
-            <div class="max-w-2xl">
+            <div class="max-w-2xl w-full lg:w-auto">
                 <div class="inline-block px-4 py-2 bg-white/50 dark:bg-dark-200/50 backdrop-blur-sm rounded-full mb-4 shadow-sm border border-gray-200/20 dark:border-white/10">
                     <span class="text-indigo-600 dark:text-indigo-400 font-semibold">👋 WELCOME TO MY PORTFOLIO</span>
                 </div>
-                <h1 class="text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">
-                    Creative Developer & AI Enthusiast
+                <h1 class="text-6xl font-bold my-10 bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">
+                    Golang Developer @ ING Nederland
                 </h1>
                 <p class="text-xl mb-8 text-gray-600 dark:text-gray-200 leading-relaxed">
-                    Crafting digital experiences where innovation meets design. Specializing in modern web development, AI integration, and creating seamless user experiences that leave a lasting impression.
+                Crafting robust cloud-native solutions with Go at ING Nederland. I specialize in building high-performance, scalable systems that power modern financial services.
                 </p>
                 <div class="flex gap-4 mb-8">
                     <a href="#about" class="inline-flex items-center px-8 py-4 bg-indigo-600 text-white rounded-2xl hover:bg-indigo-700 transition-all transform hover:scale-105 shadow-lg hover:shadow-indigo-200">
@@ -413,13 +427,16 @@
                 <div class="flex items-center gap-4 text-gray-600 dark:text-gray-400">
                     <div class="flex -space-x-2">
                         <div class="w-10 h-10 rounded-full bg-indigo-100 dark:bg-dark-300 flex items-center justify-center">
-                            <i class="fab fa-react text-indigo-600 dark:text-indigo-400"></i>
+                            <i class="fab fa-golang text-indigo-600 dark:text-indigo-400"></i>
                         </div>
                         <div class="w-10 h-10 rounded-full bg-purple-100 dark:bg-dark-300 flex items-center justify-center">
-                            <i class="fab fa-js text-purple-600 dark:text-purple-400"></i>
+                            <i class="fab fa-vuejs text-purple-600 dark:text-purple-400"></i>
                         </div>
                         <div class="w-10 h-10 rounded-full bg-blue-100 dark:bg-dark-300 flex items-center justify-center">
-                            <i class="fab fa-python text-blue-600 dark:text-blue-400"></i>
+                            <i class="fab fa-docker text-blue-600 dark:text-blue-400"></i>
+                        </div>
+						<div class="w-10 h-10 rounded-full bg-blue-100 dark:bg-dark-300 flex items-center justify-center">
+                            <i class="fab fa-git text-blue-600 dark:text-blue-400"></i>
                         </div>
                     </div>
                     <span class="text-sm">Tech Stack</span>
@@ -431,7 +448,7 @@
                 <div class="absolute -top-20 -right-20 w-96 h-96 bg-gradient-to-br from-indigo-200 to-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-70"></div>
                 <div class="relative">
                     <div class="w-[450px] h-[450px] rounded-full bg-gradient-to-br from-indigo-100 to-purple-100 flex items-center justify-center p-4">
-                        <img src="https://cdn.midjourney.com/c7643c97-0c75-4cbc-9a6d-9f0aa76b3c8c/0_0.png" 
+                        <img src="../images/ai_avatar.png" 
                              alt="AI Avatar" 
                              class="w-full h-full object-cover rounded-full shadow-2xl"
                              style="clip-path: circle(50% at 50% 50%);">
@@ -457,31 +474,34 @@
         </div>
     </section>
 
-    <section id="about" class="min-h-screen px-16 py-24 relative z-10">
+    <section id="about" class="min-h-screen px-4 lg:px-16 py-16 lg:py-24 relative z-10">
         <div class="absolute inset-0 bg-gradient-to-br from-white/50 via-transparent to-indigo-50/30 dark:from-dark-100/50 dark:via-transparent dark:to-dark-200/30"></div>
         <div class="max-w-6xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center mb-16">
                 <div class="relative">
-                    <div class="absolute -top-4 -left-4 w-full h-full bg-indigo-100 rounded-2xl"></div>
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format&fit=crop&q=60" 
+                    <div class="absolute -top-4 -left-4 w-full h-full bg-indigo-100 rounded-2xl blur-sm"></div>
+                    <div class="absolute -top-2 -left-2 w-full h-full bg-indigo-200/50 rounded-2xl"></div>
+                    <img src="../images/photo.jpeg" 
                          alt="Profile Picture" 
-                         class="relative z-10 w-full h-[500px] object-cover rounded-2xl shadow-lg">
+                         class="relative z-10 w-full h-[500px] object-cover rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 ring-2 ring-indigo-100">
                 </div>
                 <div>
                     <span class="text-indigo-600 font-semibold mb-2 block">ABOUT ME</span>
                     <h2 class="text-4xl font-bold mb-6">Crafting Digital Experiences with Passion</h2>
                     <p class="text-gray-600 dark:text-gray-200 mb-6">
-                        Hello! I'm a passionate developer with a keen eye for design and a love for creating seamless user experiences. 
-                        With expertise in front-end development and UI/UX design, I transform ideas into engaging digital solutions.
+                    Hello! I'm Sidharthan, a Software Developer specializing in cloud technologies and Kubernetes. I focus on building scalable, resilient cloud-native applications and infrastructure solutions that drive business value. My expertise spans container orchestration, microservices architecture, and distributed systems.
+					<br>
+					<br>
+                    I'm proficient in Golang and passionate about self-hosting solutions, with a deep commitment to writing clean, efficient code. As an active open-source contributor and Linux enthusiast, I stay at the forefront of technology by continuously exploring and implementing innovative solutions. Outside work, I'm an avid Formula 1 fan, merging my love for tech and motorsports.
                     </p>
                     <div class="grid grid-cols-2 gap-4 mb-6">
-                        <div class="p-4 bg-white dark:bg-dark-200 rounded-lg shadow-sm">
-                            <h3 class="font-bold mb-2 dark:text-white">Frontend Development</h3>
-                            <p class="text-gray-600 dark:text-gray-300">React, Vue, Angular</p>
+						<div class="p-4 bg-white dark:bg-dark-200 rounded-lg shadow-sm">
+                            <h3 class="font-bold mb-2 dark:text-white">Backend Development</h3>
+                            <p class="text-gray-600 dark:text-gray-300">Golang, Python, Helm, Kubernetes, Docker</p>
                         </div>
                         <div class="p-4 bg-white dark:bg-dark-200 rounded-lg shadow-sm">
-                            <h3 class="font-bold mb-2 dark:text-white">UI/UX Design</h3>
-                            <p class="text-gray-600 dark:text-gray-300">Figma, Adobe XD</p>
+                            <h3 class="font-bold mb-2 dark:text-white">Frontend Development</h3>
+                            <p class="text-gray-600 dark:text-gray-300">Vue, Nuxt, Tailwind CSS</p>
                         </div>
                     </div>
                 </div>
@@ -513,7 +533,7 @@
                     </div>
                     
                     <!-- Timeline Items Container -->
-                    <div class="flex justify-between relative px-12">
+                    <div class="flex flex-col lg:flex-row justify-between relative px-4 lg:px-12 space-y-8 lg:space-y-0">
                         <!-- Timeline Item 1 -->
                         <div class="relative group">
                             <div class="flex flex-col items-center">
@@ -584,13 +604,13 @@
         </div>
     </section>
 
-    <section id="works" class="min-h-screen px-16 py-24 relative z-10">
+    <section id="works" class="min-h-screen px-4 lg:px-16 py-16 lg:py-24 relative z-10">
         <div class="absolute inset-0 bg-gradient-to-b from-transparent via-white/50 to-purple-50/30 dark:via-dark-100/50 dark:to-dark-200/30"></div>
         <h2 class="text-3xl font-bold text-center mb-4">PORTFOLIO</h2>
         <p class="text-gray-600 dark:text-gray-300 text-center mb-12 max-w-2xl mx-auto">
             Check out some of my latest projects and creative works that showcase my skills and expertise.
         </p>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             <div class="group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 project-card cursor-pointer">
                 <div class="relative">
                     <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800" 
@@ -678,7 +698,7 @@
         </div>
     </section>
 
-    <section id="contact" class="min-h-[calc(100vh-5rem)] px-16 py-24 relative z-10">
+    <section id="contact" class="min-h-[calc(100vh-5rem)] px-4 lg:px-16 py-16 lg:py-24 relative z-10">
         <div class="absolute inset-0 bg-gradient-to-br from-purple-50/50 via-white/50 to-indigo-50/50 dark:from-dark-100/50 dark:via-dark-200/50 dark:to-dark-200/50"></div>
         <div class="max-w-4xl mx-auto relative">
             <span class="text-indigo-600 font-semibold mb-2 block">GET IN TOUCH</span>
@@ -724,6 +744,48 @@
                 });
             });
         });
+    </script>
+
+    <!-- Add a footer section -->
+    <footer class="relative z-10 bg-white/80 dark:bg-dark-200/80 backdrop-blur-lg border-t border-gray-200/20 dark:border-white/10">
+        <div class="max-w-7xl mx-auto px-4 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                <div class="text-center md:text-left">
+                    <div class="text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-2">
+                        JOHN DOE
+                    </div>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">
+                        Creative Developer & AI Enthusiast
+                    </p>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-8 text-center text-sm text-gray-600 dark:text-gray-400">
+                <p>© 2024 John Doe. All rights reserved.</p>
+                <p class="mt-2">Built with ❤️ using Tailwind CSS</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Add mobile menu script -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+            menu.classList.toggle('flex-col');
+            menu.classList.toggle('w-full');
+        }
     </script>
 </body>
 </html>
